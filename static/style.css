@@ -1,0 +1,72 @@
+body {
+  background-color: #c9ccce;
+}
+
+#navbar {
+  background-color: #051d2b;
+  color: #FFFFFF;
+  }
+
+#navbar-logo{
+  width: 55px;
+  height: 55px;
+}
+
+#navbar-links {
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+#header_image{
+  width: 1500px;
+  height: 800px;
+}
+
+#header_logo{
+  width: 750px;
+  height: 500px;
+}
+
+.w3-display-topleft {
+  background-color: #051d2b;
+  color: #FFFFFF;
+}
+
+#contact {
+  display: flex; 
+  justify-content: center; /* Horizontally centers the content within the container */
+  padding-top: 50px;
+}
+
+.team-section {
+  padding-left: 10px; /* Adds 10px padding to the left */
+  padding-right: 10px; /* Adds 10px padding to the right */
+}
+  
+.team-members {
+  /* Added a new class to wrap the team member sections */
+  display: flex; /* Makes the team members container a flex container */
+  flex-wrap: wrap; /* Allows team members to wrap on smaller screens */
+  justify-content: center; /* Horizontally centers the team members within the container */
+}
+
+.form-wrapper {
+  border: none; /* Remove the previous border style */
+  border-radius: 10px; /* Add rounded corners with 10px radius */
+  background-color: #051d2b; /* Set background color */
+  padding: 15px; /* Add padding for spacing within the form */
+  margin-top: 10px;  /* Add margin to separate the header from the form */
+  color: #fff; /* Add white text color for better contrast on dark background */
+}
+
+#noShare {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+}
+
+#footer {
+  background-color: #051d2b;
+  color: #FFFFFF;
+  margin-top: 30px; 
+}
