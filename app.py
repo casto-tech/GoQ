@@ -6,12 +6,13 @@ import ssl
 from projects import projects
 
 load_dotenv()
+app = Flask(__name__)
+
 
 context = ssl.create_default_context()
 context.options &= ~ssl.OP_NO_SSLv2
 MAIL_CONTEXT=context
 
-app = Flask(__name__)
 
 app.secret_key = os.getenv("SECRET_KEY")
 app.config['MAIL_SERVER'] = os.getenv("SERVER")
