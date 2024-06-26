@@ -1,5 +1,6 @@
-import pytest #type: ignore 
+import pytest  # type: ignore
 from app import app
+
 
 @pytest.fixture
 def test_client():

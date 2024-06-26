@@ -1,5 +1,3 @@
-import pytest #type: ignore 
-import unittest
 from app import app
 
 
