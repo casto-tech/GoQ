@@ -33,38 +33,6 @@ projects = projects
 def projects_page():
     return render_template('projects.html', projects=projects)
 
-# @app.route('/contact', methods=['GET', 'POST'])
-# def contact():
-#     def contact():
-#         if request.method == 'POST':
-#             name = request.form.get('name')
-#             email = request.form.get('email')
-#             phone = request.form.get('phone')
-#             message = request.form.get('message')
-
-#             try:
-#                 # Create email message
-#                 msg = Message(subject=f"New Contact Form Submission: {name}", 
-#                               sender='os.getenv(USERNAME)', 
-#                               recipients=['jrcasto@gmail.com'])
-                
-#                 msg.body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\n\nMessage: {message}"
-
-#                 # Send email
-#                 mail.send(msg)
-
-#                 # Success message
-#                 flash('Thank you for your message! We will get back to you soon.', 'success')
-#                 return redirect(url_for('home'))  # Redirect to home page after success
-
-#             except Exception as e:
-#                 # Error handling (log for debugging, display user-friendly message)
-#                 print(f"Error sending email: {e}")
-#                 flash('An error occurred. Please try again later.', 'error')
-#                 return render_template('404.html')  # Stay on contact page for retry
-
-#     return 'Success'
-
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
