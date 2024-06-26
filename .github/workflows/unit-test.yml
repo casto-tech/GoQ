@@ -20,6 +20,7 @@ jobs:
     - name: 'Start Flask app'
       run: |
           python app.py
+          CTRL+C
     - name: 'Stop Flask app'
       run: |
             pkill -f "python app.py"        
