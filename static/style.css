@@ -17,14 +17,16 @@ body {
   margin-bottom: 5px;
 }
 
-#header_image{
-  width: 1500px;
-  height: 800px;
+#home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
-#header_logo{
-  width: 750px;
-  height: 500px;
+.header_image {
+  
 }
 
 .w3-display-topleft {
@@ -38,16 +40,22 @@ body {
   padding-top: 50px;
 }
 
-.team-section {
-  padding-left: 10px; /* Adds 10px padding to the left */
-  padding-right: 10px; /* Adds 10px padding to the right */
+.card {
+  background-color: #c9ccce;
+  justify-content: center;
+  margin: 10px;
 }
-  
+
+.btn.btn.btn-primary {
+  justify-content: right;
+}
+
 .team-members {
   /* Added a new class to wrap the team member sections */
   display: flex; /* Makes the team members container a flex container */
   flex-wrap: wrap; /* Allows team members to wrap on smaller screens */
   justify-content: center; /* Horizontally centers the team members within the container */
+
 }
 
 .form-wrapper {
