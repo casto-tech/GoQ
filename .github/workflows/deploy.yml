@@ -42,7 +42,7 @@ jobs:
         run: |
           zip -r ${{ env.DEPLOY_PACKAGE }} ./ -x "*.git*"
       - name: AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-key: ${{ secrets.AWS_SECRET_KEY }}
