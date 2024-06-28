@@ -44,8 +44,8 @@ jobs:
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ env.AWS-REGION_NAME }}
       - name: Create EB Application
         run: aws elasticbeanstalk create-application-version --application-name ${{ env.EB_APPLICATION_NAME }} --source-bundle S3Bucket="${{ env.EB_PACKAGE_S3_BUCKET_NAME }}",S3Key="${{ env.DEPLOY_PACKAGE }}" --version-label "Ver-${{ github.sha }}" --description "CommitSHA-${{ github.sha }}"
