@@ -36,16 +36,16 @@ jobs:
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ env.AWS-REGION_NAME }}
       - name: Create EB Application
         uses: einaregilsson/beanstalk-deploy@v22
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: ${{ env.EB_APPLICATION_NAME }}
-          environment_name: MyApplication-Environment
+          environment_name: ${{ env.EB_ENVIRONMENT_NAME }}
           version_label: ${{ github.sha }}
           region: ${{ env.AWS-REGION_NAME }}
           deployment_package: ${{ env.DEPLOY_PACKAGE }}
