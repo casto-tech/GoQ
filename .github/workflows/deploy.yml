@@ -2,8 +2,8 @@ name: Deploy
 
 env:
     EB_PACKAGE_S3_BUCKET_NAME : "test-bucket-for-eb-goq"
-    EB_APPLICATION_NAME : "Eb-test"
-    EB_ENVIRONMENT_NAME : "Eb-test-env"
+    EB_APPLICATION_NAME : "qog-test-flask"
+    EB_ENVIRONMENT_NAME : "Qog-test-flask-env-1"
     DEPLOY_PACKAGE : "test-app${{ github.sha }}.zip"
     AWS-REGION_NAME : "us-east-1"
 
@@ -20,7 +20,7 @@ jobs:
 
       - name: Create zip deployment package
         run: |
-          zip -r ${{ env.DEPLOY_PACKAGE }} ./ -x "*.git*"
+          zip -r ${{ env.DEPLOY_PACKAGE }} ./ -x "*.git*" ".pyest*" ".__pycache*"
 
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
