@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for  # t
 from flask_mail import Mail, Message  # type: ignore
 from dotenv import load_dotenv  # type: ignore
 import ssl
-from projects import projects
+# from projects import projects
 
 load_dotenv()
 application = Flask(__name__)
