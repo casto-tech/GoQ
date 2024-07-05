@@ -20,7 +20,7 @@ jobs:
 
       - name: Create zip deployment package
         run: |
-          zip -r ${{ env.DEPLOY_PACKAGE }} ./ -x "*.git*" ".pyest*" ".__pycache*"
+          zip -r ${{ env.DEPLOY_PACKAGE }} ./ -x "*.git*" ".pyest*" ".__pycache*" "venv"
 
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
