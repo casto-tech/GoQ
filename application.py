@@ -74,4 +74,4 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    application.run()
+    application.run(debug=True)

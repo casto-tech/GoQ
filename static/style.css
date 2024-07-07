@@ -8,12 +8,12 @@ body {
   }
 
 #navbar-logo{
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 75px;
 }
 
 #navbar-links {
-  margin-top: 8px;
+  margin-top: 20px;
   margin-bottom: 5px;
 }
 
@@ -25,9 +25,28 @@ body {
   margin: 0;
 }
 
+#header_logo {
+  max-height: 350px;
+  max-width: 350px;
+}
+
 .w3-display-topleft {
   background-color: #051d2b;
   color: #FFFFFF;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('header/header_3.jpg');
+
+    /* Set a specific height */
+    min-height: 600px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #contact {
