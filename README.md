@@ -1,2 +1,4 @@
 # GoQ
 [![Unit-Test](https://github.com/casto-tech/GoQ/actions/workflows/unit-test.yml/badge.svg?event=push)](https://github.com/casto-tech/GoQ/actions/workflows/unit-test.yml)
+
+[![Deploy](https://github.com/casto-tech/GoQ/actions/workflows/deploy.yml/badge.svg)](https://github.com/casto-tech/GoQ/actions/workflows/deploy.yml)
