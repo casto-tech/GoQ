@@ -1,35 +1,32 @@
 import os
+import smtplib
 from flask import Flask, render_template, request, flash, redirect, url_for  # type: ignore
 from flask_mail import Mail, Message  # type: ignore
 from dotenv import load_dotenv  # type: ignore
-import ssl
+# import ssl
 # from projects import projects
 
 load_dotenv()
 application = Flask(__name__)
+mail = Mail(application)
 
-
-context = ssl.create_default_context()
-context.options &= ~ssl.OP_NO_SSLv2
-MAIL_CONTEXT = context
-
+# context = ssl.create_default_context()
+# context.options &= ~ssl.OP_NO_SSLv2
+# MAIL_CONTEXT = context
 
 application.secret_key = os.getenv("SECRET_KEY")
 application.config['MAIL_SERVER'] = os.getenv("SERVER")
 application.config['MAIL_PORT'] = os.getenv("PORT")
-application.config['MAIL_USERNAME'] = os.getenv("USERNAME")
-application.config['MAIL_PASSWORD'] = os.getenv("PASSWORD")
 application.config['MAIL_USE_TLS'] = os.getenv("TLS")
 application.config['MAIL_USE_SSL'] = os.getenv("SSL")
-
-mail = Mail(application)
+application.config['MAIL_USERNAME'] = os.getenv("USERNAME")
+application.config['MAIL_PASSWORD'] = os.getenv("PASSWORD")
+application.config['MAIL_DEBUG'] = os.getenv("DEBUG")
 
 
 @application.route('/')
 def home():
     return render_template('base.html')
-
-
 # projects = projects
 
 
@@ -40,26 +37,33 @@ def home():
 
 @application.route('/submit', methods=['POST'])
 def submit():
+    def log_message(app, message):
+        app.logger.debug(message.subject)
+    email_dispatched.connect(log_message)
+    
     if request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
         phone = request.form.get('phone')
         message = request.form.get('message')
-
+        msg = Message(
+            subject=f"New Contact Form Submission: {name}",
+            sender=os.getenv("SENDER"),
+            recipients=[os.getenv("USERNAME")])
+        msg.body = f"""
+            {name}
+            {email}
+            {phone}
+            {message}
+            """
         try:
-            msg = Message(subject=f"New Contact Form Submission: {name}",
-                          sender=os.getenv("USERNAME"),
-                          recipients=[os.getenv("USERNAME")])
-            msg.body = (f"Name: {name},\nEmail: {email}\nPhone: {phone}"
-                        f"\n\nMessage: {message}")
             mail.send(msg)
             flash('We will get back to you soon.', 'success')
-            return redirect(url_for('home'))
         except Exception as e:
             print(f"Error sending email: {e}")
             flash('An error occurred. Please try again later.', 'error')
             return render_template('500.html')
-
+        return redirect(url_for('home'))
     return render_template('base.html')
 
 
@@ -74,4 +78,4 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    application.run(debug=True)
+    application.run()
