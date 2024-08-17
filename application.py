@@ -5,7 +5,6 @@ from flask_mail import Mail, Message  # type: ignore
 from dotenv import load_dotenv  # type: ignore
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
-from email.mime.text import MIMEText
 from email_handler import create_message, send_message
 
 load_dotenv()
@@ -37,52 +36,34 @@ def submit():
     email = request.form.get('email')
     phone = request.form.get('phone')
     message = request.form.get('message')
+    
     if request.method == 'POST':
-        credentials = service_account.Credentials.from_service_account_file(
-            SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+        try:
+            credentials = service_account.Credentials.from_service_account_file(
+                SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 
-        delegated_credentials = credentials.with_subject(USER_TO_IMPERSONATE)
+            delegated_credentials = credentials.with_subject(USER_TO_IMPERSONATE)
 
-        service = build('gmail', 'v1', credentials=delegated_credentials)
+            service = build('gmail', 'v1', credentials=delegated_credentials)
 
-        sender = 'info@greensonq.com'
-        to = 'joey@greensonq.com'
-        subject = f'New Inquiry from: {name}'
-        message_text = f'NAME: {name}<br> EMAIL: {email}/n PHONE: {phone}/n/n MESSAGE: {message}'
+            sender = 'info@greensonq.com'
+            to = 'joey@greensonq.com'
+            subject = f'New Inquiry from: {name}'
+            message_text = f'NAME: {name} EMAIL: {email}/n PHONE: {phone}/n/n MESSAGE: {message}'
+            body = render_template('email.html', name=name, email=email, phone=phone, message=message)
 
-        msg= create_message(sender, to, subject, message_text)
-        send_message(service, 'me', msg)
-        # name = request.form.get('name')
-        # email = request.form.get('email')
-        # phone = request.form.get('phone')
-        # message = request.form.get('message')
-        # sender = os.getenv("USERNAME")
-        # to = os.getenv("USERNAME")
-        # subject = f'New Inquiry from {name}'
-        # message_text = message
+            msg = create_message(sender, to, subject, body)
+            send_message(service, 'me', msg)
 
-        # email_message = create_message(sender, to, subject, message_text)
-        # send_message(service, 'me', email_message)
+            flash('We will get back to you soon.', 'success')
+            return redirect(url_for('home'))
 
-        # msg = Message(
-        #     subject=f"New Contact Form Submission: {name}",
-        #     sender=os.getenv("SENDER"),
-        #     recipients=[os.getenv("USERNAME")])
-        # msg.body = f"""
-        #     {name}
-        #     {email}
-        #     {phone}
-        #     {message}
-        #     """
-    #     try:
-    #         mail.send(msg)
-    #         flash('We will get back to you soon.', 'success')
-    #     except Exception as e:
-    #         print(f"Error sending email: {e}")
-    #         flash('An error occurred. Please try again later.', 'error')
-    #         return render_template('500.html')
-    #     return redirect(url_for('home'))
-    # return render_template('base.html')
+        except Exception as error:
+            print(f'An error occurred: {error}')
+            flash('An error occurred. Please try again later.', 'error')
+            return render_template('500.html')
+
+    return redirect(url_for('home'))
 
 
 @application.errorhandler(404)

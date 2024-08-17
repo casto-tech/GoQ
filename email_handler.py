@@ -13,7 +13,7 @@ def create_message(sender, to, subject, message_text):
 
 def send_message(service, user_id, message):
     try:
-        message = service.users().messages().send(userId=user_id, body=message).execute() # type: ignore
+        message = service.users().messages().send(userId=user_id, body=message).execute()
         print(f'Message Id: {message["id"]}')
         flash('We will get back to you soon.', 'success')
         return message
@@ -21,4 +21,3 @@ def send_message(service, user_id, message):
         print(f'An error occurred: {error}')
         flash('An error occurred. Please try again later.', 'error')
         return render_template('500.html')
-    return redirect(url_for('home'))
