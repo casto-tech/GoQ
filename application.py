@@ -1,7 +1,5 @@
 import os
-import base64
 from flask import Flask, render_template, request, flash, redirect, url_for  # type: ignore
-from flask_mail import Mail, Message  # type: ignore
 from dotenv import load_dotenv  # type: ignore
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
@@ -9,7 +7,6 @@ from email_handler import create_message, send_message
 
 load_dotenv()
 application = Flask(__name__)
-mail = Mail(application)
 
 application.secret_key = os.getenv("SECRET_KEY")
 application.config['MAIL_SERVER'] = os.getenv("SERVER")
@@ -36,7 +33,7 @@ def submit():
     email = request.form.get('email')
     phone = request.form.get('phone')
     message = request.form.get('message')
-    
+
     if request.method == 'POST':
         try:
             credentials = service_account.Credentials.from_service_account_file(
@@ -46,24 +43,18 @@ def submit():
 
             service = build('gmail', 'v1', credentials=delegated_credentials)
 
-            sender = 'info@greensonq.com'
+            sender = os.getenv("SENDER")
             to = 'joey@greensonq.com'
-            subject = f'New Inquiry from: {name}'
-            message_text = f'NAME: {name} EMAIL: {email}/n PHONE: {phone}/n/n MESSAGE: {message}'
-            body = render_template('email.html', name=name, email=email, phone=phone, message=message)
+            subject = f'New Contact Form Submission: {name}'
+            message_text = f" NAME: {name}\n EMAIL: {email}\n PHONE: {phone}\n\n MESSAGE: {message}"
 
-            msg = create_message(sender, to, subject, body)
+            msg = create_message(sender, to, subject, message_text)
             send_message(service, 'me', msg)
-
-            flash('We will get back to you soon.', 'success')
-            return redirect(url_for('home'))
+            return render_template('success.html')
 
         except Exception as error:
             print(f'An error occurred: {error}')
-            flash('An error occurred. Please try again later.', 'error')
-            return render_template('500.html')
-
-    return redirect(url_for('home'))
+            return render_template('500.html', success=False)
 
 
 @application.errorhandler(404)

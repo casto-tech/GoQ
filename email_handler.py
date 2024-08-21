@@ -1,5 +1,5 @@
 import base64
-from flask import flash, render_template, redirect, url_for
+from flask import render_template
 from email.mime.text import MIMEText
 
 
@@ -15,9 +15,7 @@ def send_message(service, user_id, message):
     try:
         message = service.users().messages().send(userId=user_id, body=message).execute()
         print(f'Message Id: {message["id"]}')
-        flash('We will get back to you soon.', 'success')
         return message
     except Exception as error:
         print(f'An error occurred: {error}')
-        flash('An error occurred. Please try again later.', 'error')
         return render_template('500.html')
