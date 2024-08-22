@@ -1,25 +1,18 @@
 import os
-from flask import Flask, render_template, request, flash, redirect, url_for  # type: ignore
+from flask import Flask, render_template, request
 from dotenv import load_dotenv  # type: ignore
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from email_handler import create_message, send_message
 
 load_dotenv()
+
 application = Flask(__name__)
 
 application.secret_key = os.getenv("SECRET_KEY")
-application.config['MAIL_SERVER'] = os.getenv("SERVER")
-application.config['MAIL_PORT'] = os.getenv("PORT")
-application.config['MAIL_USE_TLS'] = os.getenv("TLS")
-application.config['MAIL_USE_SSL'] = os.getenv("SSL")
-application.config['MAIL_USERNAME'] = os.getenv("USERNAME")
-application.config['MAIL_PASSWORD'] = os.getenv("PASSWORD")
-application.config['MAIL_DEBUG'] = os.getenv("DEBUG")
-
 SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")
 USER_TO_IMPERSONATE = os.getenv("USER_TO_IMPERSONATE")
-SCOPES = ['https://www.googleapis.com/auth/gmail.send']
+SCOPES = [os.getenv("SCOPES")]
 
 
 @application.route('/')
@@ -44,8 +37,8 @@ def submit():
             service = build('gmail', 'v1', credentials=delegated_credentials)
 
             sender = os.getenv("SENDER")
-            to = 'joey@greensonq.com'
-            subject = f'New Contact Form Submission: {name}'
+            to = os.getenv("TO")
+            subject = f"New Contact Form Submission: {name}"
             message_text = f" NAME: {name}\n EMAIL: {email}\n PHONE: {phone}\n\n MESSAGE: {message}"
 
             msg = create_message(sender, to, subject, message_text)

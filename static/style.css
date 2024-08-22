@@ -13,8 +13,9 @@ body {
 }
 
 #navbar-links {
-  margin-top: 20px;
-  margin-bottom: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
 }
 
 #home {
