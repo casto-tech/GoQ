@@ -4,10 +4,12 @@ from dotenv import load_dotenv  # type: ignore
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from email_handler import create_message, send_message
+from flask_font_awesome import FontAwesome
 
 load_dotenv()
 
 application = Flask(__name__)
+font_awesome = FontAwesome(application)
 
 application.secret_key = os.getenv("SECRET_KEY")
 SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")

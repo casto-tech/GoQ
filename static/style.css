@@ -10,6 +10,7 @@ body {
 #navbar-logo{
   width: 75px;
   height: 75px;
+  margin-left: 15px;
 }
 
 #navbar-links {
@@ -17,6 +18,7 @@ body {
   margin-bottom: auto;
   margin-left: auto;
 }
+
 
 #home {
   position: relative;
