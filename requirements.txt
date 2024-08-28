@@ -6,6 +6,7 @@ click==8.1.7
 colorama==0.4.6
 flake8==7.1.0
 Flask==3.0.3
+Font-Awesome-Flask==0.1.4
 google-api-core==2.19.1
 google-api-python-client==2.141.0
 google-auth==2.33.0
