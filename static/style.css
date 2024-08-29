@@ -19,6 +19,10 @@ body {
   margin-left: auto;
 }
 
+.nav-link {
+  color: #ffffff;
+}
+
 #home {
   position: relative;
   display: flex;
@@ -39,7 +43,7 @@ body {
 
 .parallax {
     /* The image used */
-    background-image: url('header/header5.webp');
+    background-image: url('header/header_img.webp');
 
     /* Set a specific height */
     min-height: 600px; 
@@ -176,7 +180,6 @@ body {
 #footer {
   background-color: #02415d;
   color: #FFFFFF;
-  margin-top: 30px; 
 }
 
 #socials {
