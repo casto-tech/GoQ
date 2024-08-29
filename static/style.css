@@ -1,9 +1,9 @@
 body {
-  background-color: #c9ccce;
+  background-color: #e6e6e6;
 }
 
 #navbar {
-  background-color: #051d2b;
+  background-color: #02415d;
   color: #FFFFFF;
   }
 
@@ -34,13 +34,13 @@ body {
 }
 
 .w3-display-topleft {
-  background-color: #051d2b;
+  background-color: #02415d;
   color: #FFFFFF;
 }
 
 .parallax {
     /* The image used */
-    background-image: url('header/header_3.jpg');
+    background-image: url('header/header5.webp');
 
     /* Set a specific height */
     min-height: 600px; 
@@ -59,7 +59,7 @@ body {
 }
 
 .card {
-  background-color: #c9ccce;
+  background-color: #e6e6e6;
   justify-content: center;
   margin: 10px;
 }
@@ -79,7 +79,7 @@ body {
 .form-wrapper {
   border: none; /* Remove the previous border style */
   border-radius: 10px; /* Add rounded corners with 10px radius */
-  background-color: #051d2b; /* Set background color */
+  background-color: #02415d; /* Set background color */
   padding: 15px; /* Add padding for spacing within the form */
   margin-top: 10px;  /* Add margin to separate the header from the form */
   color: #fff; /* Add white text color for better contrast on dark background */
@@ -92,7 +92,7 @@ body {
 }
 
 #footer {
-  background-color: #051d2b;
+  background-color: #02415d;
   color: #FFFFFF;
   margin-top: 30px; 
 }
@@ -148,12 +148,12 @@ body {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: #051d2b;
+  background-color: #02415d;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #051d2b;
+  color: #02415d;
   font-size: 12px;
   padding: 8px 180px;
   position: absolute;
