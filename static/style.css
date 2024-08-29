@@ -19,7 +19,6 @@ body {
   margin-left: auto;
 }
 
-
 #home {
   position: relative;
   display: flex;
@@ -51,39 +50,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-#contact {
-  display: flex; 
-  justify-content: center; /* Horizontally centers the content within the container */
-  padding-top: 50px;
-}
-
-.btn.btn.btn-primary {
-  justify-content: right;
-}
-
-
-.form-wrapper {
-  border: none; /* Remove the previous border style */
-  border-radius: 10px; /* Add rounded corners with 10px radius */
-  background-color: #02415d; /* Set background color */
-  padding: 15px; /* Add padding for spacing within the form */
-  margin-top: 10px;  /* Add margin to separate the header from the form */
-  color: #fff; /* Add white text color for better contrast on dark background */
-}
-
-#noShare {
-  margin-top: 20px;
-  margin-bottom: 15px;
-  color: #FFFFFF;
-}
-
-#footer {
-  background-color: #02415d;
-  color: #FFFFFF;
-  margin-top: 30px; 
-}
-
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
@@ -182,4 +148,40 @@ body {
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+#contact {
+  display: flex; 
+  justify-content: center; /* Horizontally centers the content within the container */
+  padding-top: 50px;
+}
+
+
+
+.form-wrapper {
+  border: none; /* Remove the previous border style */
+  border-radius: 10px; /* Add rounded corners with 10px radius */
+  background-color: #02415d; /* Set background color */
+  padding: 15px; /* Add padding for spacing within the form */
+  margin-top: 10px;  /* Add margin to separate the header from the form */
+  color: #fff; /* Add white text color for better contrast on dark background */
+}
+
+#noShare {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+}
+
+#footer {
+  background-color: #02415d;
+  color: #FFFFFF;
+  margin-top: 30px; 
+}
+
+#socials {
+  float: right;
+  margin: auto;
+  padding-top: 5%;
+  font-size: 23px;
 }
