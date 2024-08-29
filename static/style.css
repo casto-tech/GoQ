@@ -58,23 +58,10 @@ body {
   padding-top: 50px;
 }
 
-.card {
-  background-color: #e6e6e6;
-  justify-content: center;
-  margin: 10px;
-}
-
 .btn.btn.btn-primary {
   justify-content: right;
 }
 
-.team-members {
-  /* Added a new class to wrap the team member sections */
-  display: flex; /* Makes the team members container a flex container */
-  flex-wrap: wrap; /* Allows team members to wrap on smaller screens */
-  justify-content: center; /* Horizontally centers the team members within the container */
-
-}
 
 .form-wrapper {
   border: none; /* Remove the previous border style */
