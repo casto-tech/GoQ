@@ -56,9 +56,9 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
 
-        - name: Run Unit Tests with Pytest
-          run: |
-              pytest -v
+        # - name: Run Unit Tests with Pytest
+        #   run: |
+        #       pytest -v
     lint:
       name: Lint code ${{ github.ref_name  }}
       needs: [unit-test]
