@@ -2,6 +2,9 @@ import pytest
 import os
 from unittest.mock import MagicMock, patch
 from application import application
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Mock the Gmail API
