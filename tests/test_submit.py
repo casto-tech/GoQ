@@ -16,7 +16,7 @@ def mock_send_message(service, user_id, message):
     pass
 
 
-os.getenv("SENDER") = os.environ["SENDER"] 
+os.getenv("SENDER") == os.environ["SENDER"] 
 os.environ["TO"] = os.getenv("TO")
 
 
