@@ -135,9 +135,8 @@ jobs:
           uses: becheran/mlc@v0.18.0
 
         - name: Security check - Bandit
-          uses: ./
+          uses: ioggstream/bandit-report-artifacts@v0.0.2
           with:
-            python_version: ${{ matrix.python-version }}
             project_path: .
             ignore_failure: true
       
