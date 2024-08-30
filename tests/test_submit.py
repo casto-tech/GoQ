@@ -2,9 +2,6 @@ import pytest
 import os
 from unittest.mock import MagicMock, patch
 from application import application
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 # Mock the Gmail API
@@ -16,7 +13,7 @@ def mock_send_message(service, user_id, message):
     pass
 
 
-os.getenv("SENDER") == os.environ["SENDER"]
+os.environ["SENDER"] = os.getenv("SENDER")
 os.environ["TO"] = os.getenv("TO")
 
 
