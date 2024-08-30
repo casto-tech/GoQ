@@ -120,16 +120,19 @@ jobs:
             pip install bandit
             bandit -r . --skip B101
 
-        - name: Audit all dependencies
+        - name: Audit all dependencies x1
           uses: pypa/gh-action-pip-audit@v1.1.0
           with:
             inputs: requirements.txt
             summary: true
 
-        - name: Markup Link Checker (mlc)
+        - name: Audit all dependencies x2
+          uses: homoluctus/pip-audit-action@v1
+          with:
+            type: pip
+
+        - name: URL Link Checker (mlc)
           uses: becheran/mlc@v0.18.0
-          # with:
-          #   args: ./README.md ./templates/*
 
         - name: Security check - Bandit
           uses: ./
@@ -138,9 +141,9 @@ jobs:
             project_path: .
             ignore_failure: true
       
-        - name: Security check report artifacts
-          uses: actions/upload-artifact@v1
-          if: failure()
-          with:
-            name: Security report
-            path: output/security_report.txt
+        # - name: Security check report artifacts
+        #   uses: actions/upload-artifact@v1
+        #   if: failure()
+        #   with:
+        #     name: Security report
+        #     path: output/security_report.txt
