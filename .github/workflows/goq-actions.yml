@@ -128,8 +128,8 @@ jobs:
 
         - name: Markup Link Checker (mlc)
           uses: becheran/mlc@v0.18.0
-          with:
-            args: ./README.md ./templates/*
+          # with:
+          #   args: ./README.md ./templates/*
 
         - name: Security check - Bandit
           uses: ./
