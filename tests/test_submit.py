@@ -1,9 +1,7 @@
 import pytest
 import os
-from unittest.mock import Mock, patch
+from unittest.mock import MagicMock, patch
 from application import application
-from google.oauth2.credentials import Credentials
-from googleapiclient.errors import HttpError
 
 
 # Mock the Gmail API
