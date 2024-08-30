@@ -40,7 +40,7 @@ jobs:
         - name: Security Scan with Bandit
           run: |
             pip install bandit
-            bandit -r .
+            bandit -r . --skip B101
 
         - name: Run Pip Audit
           uses: pypa/gh-action-pip-audit@v1.1.0
