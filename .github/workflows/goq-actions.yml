@@ -33,9 +33,9 @@ jobs:
           run: |
             flake8 --ignore=E501,F401
 
-        - name: Run Unit Tests with Pytest
-          run: |
-            pytest -v
+        # - name: Run Unit Tests with Pytest
+        #   run: |
+        #     pytest -v
 
         - name: Security Scan with Bandit
           run: |

@@ -13,8 +13,8 @@ def mock_send_message(service, user_id, message):
     pass
 
 
-# os.environ["SENDER"] = os.getenv("SENDER")
-# os.environ["TO"] = os.getenv("TO")
+os.environ["SENDER"] = os.getenv("SENDER")
+os.environ["TO"] = os.getenv("TO")
 
 
 @pytest.fixture
@@ -25,14 +25,13 @@ def client():
 
 
 def test_submit_form_success(client):
-    # with patch('googleapiclient.discovery.build', side_effect=mock_build):
-    #     with patch('application.send_message', side_effect=mock_send_message):
-    #         response = client.post('/submit', data={
-    #             'name': 'Test User',
-    #             'email': 'test@example.com',
-    #             'phone': '123-456-7890',
-    #             'message': 'This is a test message'
-    #         })
+    with patch('googleapiclient.discovery.build', side_effect=mock_build):
+        with patch('application.send_message', side_effect=mock_send_message):
+            response = client.post('/submit', data={
+                'name': 'Test User',
+                'email': 'test@example.com',
+                'phone': '123-456-7890',
+                'message': 'This is a test message'
+            })
 
-    #         assert response.status_code == 200
-    pass
+            assert response.status_code == 200
