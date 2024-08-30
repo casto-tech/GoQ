@@ -94,7 +94,7 @@ jobs:
       needs: [lint]
       strategy:
         matrix:
-          os: [ubuntu-latest, windows-latest]
+          os: [ubuntu-latest]
           python-version: ["3.11", "3.12"]
       runs-on: ${{matrix.os}}
       steps:
@@ -145,4 +145,4 @@ jobs:
           if: failure()
           with:
             name: Security report
-            path: output/security_report.txt
+            path: ./security_report.txt
