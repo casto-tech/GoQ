@@ -32,7 +32,7 @@ jobs:
 
         - name: Run Flask
           run: |
-            flask run --app
+            flask run -A
             
     unit-test:
       name: Unit-Test ${{ github.repository }}
