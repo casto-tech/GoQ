@@ -33,11 +33,11 @@ jobs:
     unit-test:
       name: Unit-Test ${{ github.repository }}
       needs: [build]
+      runs-on: ${{matrix.os}}
       strategy:
         matrix:
           os: [ubuntu-latest]
           python-version: ["3.11", "3.12"]
-      runs-on: ${{matrix.os}}
       steps:
         - name: Checkout code
           uses: actions/checkout@v4
