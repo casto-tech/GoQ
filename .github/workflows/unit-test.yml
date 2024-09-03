@@ -1,38 +1,44 @@
-# name: Unit-Test
-# on:
-#   push:
-#     branches-ignore: [ main ]
+name: Unit Test
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v4.1.6
-#     - name: Set up Python 3.12
-#       uses: actions/setup-python@v5
-#       with:
-#         python-version: '3.12'
-#     - name: Install dependencies
-#       run: |
-#         python -m pip install --upgrade pip
-#         pip install -r requirements.txt
-#     - name: Lint with flake8
-#       run: |
-#         flake8 --ignore=E501,F401
-#   test:
-#     needs: [build]
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v4.1.6
-#     - name: Set up Python 3.12
-#       uses: actions/setup-python@v5
-#       with:
-#         python-version: '3.12'
-#     - name: Display Python version
-#       run: python -c "import sys; print(sys.version)"
-#     - name: Install dependencies
-#       run: |
-#         pip install -r requirements.txt
-#     - name: Test with pytest
-#       run: |
-#         pytest -v
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      os:
+        required: true
+        type: string
+
+jobs:
+  unit-test:
+    name: Unit-Test
+    runs-on: ${{ inputs.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+                
+      - name: Setup Python ${{ inputs.python-version }}
+        uses: actions/setup-python@v5
+        with: 
+          python-version: ${{ inputs.python-version }}
+
+      - name: Display Python version
+        run: |
+          python -c "import sys; print(sys.version)"
+    
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+        
+      - name: Run Unit Tests with Pytest
+        env:
+          SENDER: ${{ github.environment.SENDER }}
+          TO: ${{ github.environment.TO }}
+          DEBUG: False
+          SERVICE_ACCOUNT_FILE: ${{ github.environment.SERVICE_ACCOUNT_FILE }}
+          SCOPES: ${{ github.environment.SCOPES }}
+          USER_TO_IMPERSONATE: ${{ github.environment.USER_TO_IMPERSONATE }}
+        run: |
+            pytest -v
