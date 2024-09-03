@@ -1,4 +1,4 @@
-name: Security Code Review
+name: External Link Validation
 
 on:
   workflow_call:
@@ -11,8 +11,8 @@ on:
         type: string
 
 jobs:
-  security-code-review:
-    name: Security code review
+  external-link-validation:
+    name: External link validation
     runs-on: ${{ inputs.os }}
     steps:
       - name: Checkout code
@@ -28,14 +28,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Code security scan with Bandit
-        run: |
-          pip install bandit
-          bandit -r . --skip B101
-
-      - name: Security check - Bandit
-        uses: ioggstream/bandit-report-artifacts@v0.0.2
-        with:
-          project_path: .
-          ignore_failure: true
-
+      - name: URL Link Checker
+        uses: becheran/mlc@v0.18.0

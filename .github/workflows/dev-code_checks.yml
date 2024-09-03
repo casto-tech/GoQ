@@ -38,3 +38,10 @@ jobs:
     with:
       python-version: ["3.11", "3.12"]
       os: ubuntu-latest
+
+  external-link-validation:
+    needs: [dependency-audit]
+    uses: ./.github/workflows/external-link-validation.yml
+    with:
+      python-version: ["3.11", "3.12"]
+      os: ubuntu-latest
