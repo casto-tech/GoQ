@@ -29,10 +29,6 @@ jobs:
           run: |
             python -m pip install --upgrade pip
             pip install -r requirements.txt
-
-        - name: Run Flask
-          run: |
-            flask run
             
     unit-test:
       name: Unit-Test ${{ github.repository }}
@@ -59,10 +55,18 @@ jobs:
           run: |
             python -m pip install --upgrade pip
             pip install -r requirements.txt
+        
+        env:
+          SENDER: ${{ github.environment.SENDER }}
+          TO: ${{ github.environment.TO }}
+          DEBUG: False
+          SERVICE_ACCOUNT_FILE: ${{ github.environment.SERVICE_ACCOUNT_FILE }}
+          SCOPES: ${{ github.environment.SCOPES }}
+          USER_TO_IMPERSONATE: ${{ github.environment.USER_TO_IMPERSONATE }}
 
-        # - name: Run Unit Tests with Pytest
-        #   run: |
-        #       pytest -v
+        - name: Run Unit Tests with Pytest
+          run: |
+              pytest -v
     lint:
       name: Lint code ${{ github.ref_name  }}
       needs: [unit-test]
