@@ -31,7 +31,7 @@ jobs:
             pip install -r requirements.txt
             
     unit-test:
-      name: Unit-Test ${{ github.repository }}
+      name: Unit-Test ${{ github.actor_id }}
       needs: [build]
       runs-on: ${{matrix.os}}
       strategy:
@@ -56,15 +56,14 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
         
-        env:
-          SENDER: ${{ github.environment.SENDER }}
-          TO: ${{ github.environment.TO }}
-          DEBUG: False
-          SERVICE_ACCOUNT_FILE: ${{ github.environment.SERVICE_ACCOUNT_FILE }}
-          SCOPES: ${{ github.environment.SCOPES }}
-          USER_TO_IMPERSONATE: ${{ github.environment.USER_TO_IMPERSONATE }}
-
         - name: Run Unit Tests with Pytest
+          env:
+            SENDER: ${{ github.environment.SENDER }}
+            TO: ${{ github.environment.TO }}
+            DEBUG: False
+            SERVICE_ACCOUNT_FILE: ${{ github.environment.SERVICE_ACCOUNT_FILE }}
+            SCOPES: ${{ github.environment.SCOPES }}
+            USER_TO_IMPERSONATE: ${{ github.environment.USER_TO_IMPERSONATE }}
           run: |
               pytest -v
     lint:
