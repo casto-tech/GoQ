@@ -2,7 +2,7 @@ name: Dev Code Review
 
 on: 
   push:
-    branches: [ main ]
+    branches-ignore: [ main ]
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
       os: ubuntu-latest
   
   dependency-audit:
-    needs: [unit-test]
+    needs: [security-code-review]
     uses: ./.github/workflows/dependency_audit.yml
     with:
       python-version: 3.11
