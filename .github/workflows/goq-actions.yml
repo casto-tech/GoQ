@@ -133,10 +133,10 @@ jobs:
             inputs: requirements.txt
             summary: true
 
-        # - name: Audit all dependencies x2
-        #   uses: homoluctus/pip-audit-action@v1
-        #   with:
-        #     type: pip
+        - name: Audit all dependencies x2
+          uses: homoluctus/pip-audit-action@v1
+          with:
+            type: pypi
 
         - name: URL Link Checker (mlc)
           uses: becheran/mlc@v0.18.0
