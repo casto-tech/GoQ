@@ -1,6 +1,6 @@
-name: Build
+name: Security Code Review
 
-on: 
+on:
   workflow_call:
     inputs:
       python-version:
@@ -11,8 +11,8 @@ on:
         type: string
 
 jobs:
-  build:
-    name: Build Python_${{ inputs.python-version }} on ${{ inputs.os }}
+  security-code-review:
+    name: Security code review
     runs-on: ${{ inputs.os }}
     steps:
       - name: Checkout code
@@ -22,8 +22,23 @@ jobs:
         uses: actions/setup-python@v5
         with: 
           python-version: ${{ inputs.python-version }}
-
+        
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Code security scan with Bandit
+        run: |
+          pip install bandit
+          bandit -r . --skip B101
+
+      - name: URL Link Checker
+        uses: becheran/mlc@v0.18.0
+
+      - name: Security check - Bandit
+        uses: ioggstream/bandit-report-artifacts@v0.0.2
+        with:
+          project_path: .
+          ignore_failure: true
+

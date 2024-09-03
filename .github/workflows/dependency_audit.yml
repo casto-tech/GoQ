@@ -1,6 +1,6 @@
-name: Build
+name: Dependency Audit
 
-on: 
+on:
   workflow_call:
     inputs:
       python-version:
@@ -11,8 +11,8 @@ on:
         type: string
 
 jobs:
-  build:
-    name: Build Python_${{ inputs.python-version }} on ${{ inputs.os }}
+  security-code-review:
+    name: Security code review
     runs-on: ${{ inputs.os }}
     steps:
       - name: Checkout code
@@ -22,8 +22,14 @@ jobs:
         uses: actions/setup-python@v5
         with: 
           python-version: ${{ inputs.python-version }}
-
+        
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Audit all dependencies
+        uses: pypa/gh-action-pip-audit@v1.1.0
+        with:
+          inputs: requirements.txt
+          summary: true
