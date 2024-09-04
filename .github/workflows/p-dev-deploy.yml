@@ -27,11 +27,8 @@ jobs:
         
       - name: Download environment resources  
         run: |
-          aws s3 cp "s3://dev-deploy-resources/" ".\.env"
-          aws s3 cp "s3://dev-deploy-resources/" ".\sa-key.json"
-
-      - name: Create zip deployment package
-        run: |
+          aws s3 cp "s3://dev-deploy-resources/" "./.env"
+          aws s3 cp "s3://dev-deploy-resources/" "./sa-key.json"
           zip -r ${{ env.DEPLOY_PACKAGE }} ./ -x "*.git*" ".pyest*" ".__pycache*" "venv" "tests"
 
       - name: Copy deployment package to S3 bucket
