@@ -12,7 +12,7 @@ on:
 
 jobs:
   dependency-audit:
-    name: Security code review
+    name: Dependency audit
     runs-on: ${{ inputs.os }}
     steps:
       - name: Checkout code
