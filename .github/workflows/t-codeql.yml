@@ -1,22 +1,13 @@
 name: "CodeQL"
 
-# on:
-#   push:
-#     branches: [ "main", ]
-#   pull_request:
-#     branches: [ "main" ]
-#   schedule:
-#     - cron: '15 8 * * 4'
+on:
+  push:
+    branches: [ "main", ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '15 8 * * 4'
 
-on: 
-  workflow_call:
-    inputs:
-      python-version:
-        required: true
-        type: string
-      os:
-        required: true
-        type: string
 
 jobs:
   analyze:
