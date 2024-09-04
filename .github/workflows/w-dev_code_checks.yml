@@ -34,7 +34,7 @@ jobs:
   
   codeql:
     needs: [security-code-review]
-    uses: ./.github/workflows/t-codeql1.yml
+    uses: ./.github/workflows/t-codeql.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
