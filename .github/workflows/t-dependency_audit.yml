@@ -11,7 +11,7 @@ on:
         type: string
 
 jobs:
-  security-code-review:
+  dependency-audit:
     name: Security code review
     runs-on: ${{ inputs.os }}
     steps:
