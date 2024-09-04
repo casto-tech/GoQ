@@ -19,35 +19,29 @@ jobs:
       os: ubuntu-latest
 
   unit-test:
-    needs: [lint]
+    needs: [build]
     uses: ./.github/workflows/t-unit-test.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
 
   security-code-review:
-    needs: [unit-test]
+    needs: [build]
     uses: ./.github/workflows/t-security_code_review.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
-  
-  # codeql:
-  #   needs: [security-code-review]
-  #   uses: ./.github/workflows/t-codeql.yml
-  #   with:
-  #     python-version: 3.11
-  #     os: ubuntu-latest
+
   
   dependency-audit:
-    needs: [security-code-review]
+    needs: [build]
     uses: ./.github/workflows/t-dependency_audit.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
 
   external-link-validation:
-    needs: [dependency-audit]
+    needs: [build]
     uses: ./.github/workflows/t-external-link-validation.yml
     with:
       python-version: 3.11
