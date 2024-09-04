@@ -15,7 +15,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Git Clone
+      - name: Checkout code
         uses: actions/checkout@main
 
       - name: Create zip deployment package

@@ -15,7 +15,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Git Clone
+      - name: Checkout code
         uses: actions/checkout@main
 
       - name: Create zip deployment package
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
-      - name: Checkout Repo
+      - name: Checkout code
         uses: actions/checkout@v4.1.6
       - name: Create zip deployment package
         run: |

@@ -24,6 +24,7 @@ jobs:
     with:
       python-version: 3.11
       os: ubuntu-latest
+     
 
   security-code-review:
     needs: [build]
