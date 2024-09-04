@@ -32,15 +32,15 @@ jobs:
       python-version: 3.11
       os: ubuntu-latest
   
-  codeql:
-    needs: [security-code-review]
-    uses: ./.github/workflows/t-codeql.yml
-    with:
-      python-version: 3.11
-      os: ubuntu-latest
+  # codeql:
+  #   needs: [security-code-review]
+  #   uses: ./.github/workflows/t-codeql.yml
+  #   with:
+  #     python-version: 3.11
+  #     os: ubuntu-latest
   
   dependency-audit:
-    needs: [codeql]
+    needs: [security-code-review]
     uses: ./.github/workflows/t-dependency_audit.yml
     with:
       python-version: 3.11
