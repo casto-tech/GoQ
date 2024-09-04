@@ -6,42 +6,49 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/Build.yml
+    uses: ./.github/workflows/t-Build.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
 
   lint:
     needs: [build]
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/t-lint.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
 
   unit-test:
     needs: [lint]
-    uses: ./.github/workflows/unit-test.yml
+    uses: ./.github/workflows/t-unit-test.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
 
   security-code-review:
     needs: [unit-test]
-    uses: ./.github/workflows/security_code_review.yml
+    uses: ./.github/workflows/t-security_code_review.yml
+    with:
+      python-version: 3.11
+      os: ubuntu-latest
+  
+  codeql:
+    needs: [security-code-review]
+    uses: ./.github/workflows/t-codeql1.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
   
   dependency-audit:
-    needs: [security-code-review]
-    uses: ./.github/workflows/dependency_audit.yml
+    needs: [codeql]
+    uses: ./.github/workflows/t-dependency_audit.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
 
   external-link-validation:
     needs: [dependency-audit]
-    uses: ./.github/workflows/external-link-validation.yml
+    uses: ./.github/workflows/t-external-link-validation.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
