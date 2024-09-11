@@ -27,13 +27,10 @@
 <img alt="linked" src="https://img.shields.io/badge/-LinkedIn-1a73e8?style=flat-square&logo=linkedin&logoColor=white&url=https://www.linkedin.com/in/joseph-casto-jr/" />
 
 ### Technology
-<img alt="google-cloud-platform" src="https://img.shields.io/badge/-Google_Cloud_Platform-1a73e8?style=flat-square&logo=google-cloud&logoColor=red"/>
-<img alt="google-workspace" src="https://img.shields.io/badge/-Google WorkSpace-1a73e8?style=flat-square&logo=google&logoColor=white" />
-<img alt="workspace-admin" src="https://img.shields.io/badge/-WorkSpace Admin-1a73e8?style=flat-square&logo=google-chrome&logoColor=white" />
-<img alt="github-actions" src="https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white" />
+
 <img alt="sass" src="https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white" />
 <img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
-<img alt="github" src="https://img.shields.io/badge/-Github-CC6042?style=flat-square&logo=github&logoColor=white" />
+
 <img alt="jinja" src="https://img.shields.io/badge/-Jinja-ffffff?style=flat-square&logo=jinja&logoColor=red" />
 <img alt="html5" src="https://img.shields.io/badge/-HTML5-1a73e8?style=flat-square&logo=HTML5&logoColor=white" />
 <img alt="css3" src="https://img.shields.io/badge/-CSS3-1a73e8?style=flat-square&logo=CSS3&logoColor=white" />
@@ -54,15 +51,12 @@
 <img alt="flask" src="https://img.shields.io/badge/-Flask-1a73e8?style=flat-square&logo=flask&logoColor=white" />
 <img alt="Python" src="https://img.shields.io/badge/-Python-1a73e8?style=flat-square&logo=python&logoColor=white" />
 
-| Technology| |
-|:-:|:-:|
-| Cloud Computing| 
-| Front-End|
-| Backend |
+| Technology |    |
+| :--------------:|:---:|
+| Cloud Computing | ![google-cloud-platform](https://img.shields.io/badge/-Google_Cloud_Platform-1a73e8?style=flat-square&logo=google-cloud&logoColor=red) ![google-workspace](https://img.shields.io/badge/-Google_Workspace-1a73e8?style=flat-square&logo=google&logoColor=red) ![github-actions](https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white) ![github](https://img.shields.io/badge/-Github-CC6042?style=flat-square&logo=github&logoColor=white)
 
+  |  
+| Front-End       | f   |
+| Backend         | b  |
 
-<a href="https://www.python.org/" title="Python"><img src="icons/python.png" /></a>
-<a href="https://git-scm.com/" title="Git"><img src="icons/git.png" /></a>
-<a href="https://www.docker.com/" title="Docker"><img src="icons/docker.png" /></a>
-<a href="https://github.com/" title="GitHub"><img src="icons/github.png" /></a>
 
