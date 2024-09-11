@@ -17,16 +17,7 @@
  | **Project Management** | ![Last Commit](https://img.shields.io/github/last-commit/casto-tech/GoQ.svg?logo=git) ![Commits Activity](https://img.shields.io/github/commit-activity/y/casto-tech/GoQ.svg?logo=git)<br> ![GitHub issues](https://img.shields.io/github/issues/casto-tech/GoQ?logo=git) ![GitHub repo size](https://img.shields.io/github/repo-size/casto-tech/GoQ.svg?logo=git)  |
 
 
-  $\color{RoyalBlue}{Greens\ on\ Q}$
 
-
-  ![Top language](https://img.shields.io/github/languages/top/casto-tech/GoQ.svg)
-
-##### Socials
- ![X Follow](https://img.shields.io/twitter/follow/PHXJoey.svg?style=social)
-<img alt="linked" src="https://img.shields.io/badge/-LinkedIn-1a73e8?style=flat-square&logo=linkedin&logoColor=white&url=https://www.linkedin.com/in/joseph-casto-jr/" />
-
-### Technology
 
 <img alt="sass" src="https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white" />
 <img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
@@ -53,10 +44,10 @@
 
 | Technology |    |
 | :--------------:|:---:|
-| Cloud Computing | ![google-cloud-platform](https://img.shields.io/badge/-Google_Cloud_Platform-1a73e8?style=flat-square&logo=google-cloud&logoColor=red) ![google-workspace](https://img.shields.io/badge/-Google_Workspace-1a73e8?style=flat-square&logo=google&logoColor=red) ![github-actions](https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white) ![github](https://img.shields.io/badge/-Github-CC6042?style=flat-square&logo=github&logoColor=white)
-
-  |  
+| Cloud Computing | ![google-cloud-platform](https://img.shields.io/badge/-Google_Cloud_Platform-1a73e8?style=flat-square&logo=google-cloud&logoColor=red) ![google-workspace](https://img.shields.io/badge/-Google_Workspace-1a73e8?style=flat-square&logo=google&logoColor=red)  ![github-actions](https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+|  
 | Front-End       | f   |
 | Backend         | b  |
+| Source Control  | ![git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) ![github](https://img.shields.io/badge/-Github-CC6042?style=flat-square&logo=github&logoColor=white)   |
 
 
