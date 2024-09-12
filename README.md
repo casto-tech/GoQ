@@ -19,21 +19,11 @@
 <br>
 <br>
 
-<img alt="jinja" src="https://img.shields.io/badge/-Jinja-ffffff?style=flat-square&logo=jinja&logoColor=red" />
-<img alt="html5" src="https://img.shields.io/badge/-HTML5-1a73e8?style=flat-square&logo=HTML5&logoColor=white" />
-<img alt="css3" src="https://img.shields.io/badge/-CSS3-1a73e8?style=flat-square&logo=CSS3&logoColor=white" />
-<img alt="bootstrap-5" src="https://img.shields.io/badge/-Bootstrap 5-ffffff?style=flat-square&logo=bootstrap&logoColor=purplw" />
-<img alt="pytest" src="https://img.shields.io/badge/-Pytest-1a73e8?style=flat-square&logo=pytest&logoColor=white" />
-<img alt="linux" src="https://img.shields.io/badge/-Linux-000000?style=flat-square&logo=linux&logoColor=white" />
-<img alt="font-awesome" src="https://img.shields.io/badge/-Font Awesome-1a73e8?style=flat-square&logo=fontawesome&logoColor=white" />
-
-
-| Technology |    |
+| **_Technology_** |    |
 | :--------------:|:---:|
-| Cloud Computing | ![google-cloud-platform](https://img.shields.io/badge/-Google_Cloud_Platform-4285F4?style=flat-square&logo=google-cloud&logoColor=FF7143) ![google-workspace](https://img.shields.io/badge/-Google_Workspace-4285F4?style=flat-square&logo=google&logoColor=FF7143)  ![github-actions](https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white) ![elastic-beanstalk](https://img.shields.io/badge/-Elastic%20Beanstalk-232f3e?style=flat-square&logo=amazonsimpleemailservice&logoColor=FF9900) ![aws-ec2](https://img.shields.io/badge/-Amazon%20EC2-232f3e?style=flat-square&logo=amazon-ec2&logoColor=FF9900) ![aws-cloudwatch](https://img.shields.io/badge/-Cloudwatch-232f3e?style=flat-square&logo=amazon-cloudwatch&logoColor=FF9900) ![aws-s3](https://img.shields.io/badge/-Amazon%20S3-232f3e?style=flat-square&logo=amazon-s3&logoColor=FF9900) ![aws-53](https://img.shields.io/badge/-Route%2053-232f3e?style=flat-square&logo=amazon-route-53&logoColor=FF9900) |  
-| Front-End       | f   |
-| Backend         | ![python](https://img.shields.io/badge/-Python-4584b6?style=flat-square&logo=python&logoColor=ffde57) ![flask](https://img.shields.io/badge/-Flask-ffffff?style=flat-square&logo=flask&logoColor=black)  |
-| Source Control  | ![git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) ![github](https://img.shields.io/badge/-Github-CC6042?style=flat-square&logo=github&logoColor=white) |
-| Operating System | ![ubuntu](https://img.shields.io/badge/-Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=06051F) |
+| **Cloud Technologies** | ![google-cloud-platform](https://img.shields.io/badge/-Google_Cloud_Platform-4285F4?style=flat-square&logo=google-cloud&logoColor=FF7143) ![google-workspace](https://img.shields.io/badge/-Google_Workspace-4285F4?style=flat-square&logo=google&logoColor=FF7143)  ![github-actions](https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white) ![elastic-beanstalk](https://img.shields.io/badge/-Elastic%20Beanstalk-232f3e?style=flat-square&logo=amazonsimpleemailservice&logoColor=FF9900) ![aws-ec2](https://img.shields.io/badge/-Amazon%20EC2-232f3e?style=flat-square&logo=amazon-ec2&logoColor=FF9900) ![aws-cloudwatch](https://img.shields.io/badge/-Cloudwatch-232f3e?style=flat-square&logo=amazon-cloudwatch&logoColor=FF9900) ![aws-s3](https://img.shields.io/badge/-Amazon%20S3-232f3e?style=flat-square&logo=amazon-s3&logoColor=FF9900) ![aws-53](https://img.shields.io/badge/-Route%2053-232f3e?style=flat-square&logo=amazon-route-53&logoColor=FF9900) |  
+| **Front-End Technologies**       | ![html5](https://img.shields.io/badge/-HTML5-ffffff?style=flat-square&logo=html5&logoColor=orange) ![css3](https://img.shields.io/badge/-CSS3-ffffff?style=flat-square&logo=css3&logoColor=blue) ![jinja](https://img.shields.io/badge/-Jinja-ffffff?style=flat-square&logo=jinja&logoColor=red) ![bootstrap5](https://img.shields.io/badge/-Bootstrap5-ffffff?style=flat-square&logo=bootstrap&logoColor=purple) ![font_awesome](https://img.shields.io/badge/-FontAwesome-1a73e8?style=flat-square&logo=fontawesome&logoColor=white) |
+| **Back-End Technologies**         | ![python](https://img.shields.io/badge/-Python-4584b6?style=flat-square&logo=python&logoColor=ffde57) ![flask](https://img.shields.io/badge/-Flask-ffffff?style=flat-square&logo=flask&logoColor=black) ![pytest](https://img.shields.io/badge/-Pytest-1a73e8?style=flat-square&logo=pytest&logoColor=white) ![ubuntu](https://img.shields.io/badge/-Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=06051F) ![nginx](https://img.shields.io/badge/-Nginx-009900?style=flat-square&logo=nginx&logoColor=06051F)  |
+| **Source Control**  | ![git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) ![github](https://img.shields.io/badge/-Github-CC6042?style=flat-square&logo=github&logoColor=white) |
 
 
