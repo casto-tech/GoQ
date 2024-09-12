@@ -1,6 +1,8 @@
 body {
-  background-color: #e6e6e6;
+  /* background-color: #e6e6e6; */
+  background-color: #ffffff;
 }
+/*Navbar CSS*/
 
 #navbar {
   background-color: #02415d;
@@ -22,6 +24,7 @@ body {
 .nav-link {
   color: #ffffff;
 }
+/*Header CSS*/
 
 #home {
   position: relative;
@@ -34,11 +37,6 @@ body {
 #header_logo {
   max-height: 350px;
   max-width: 350px;
-}
-
-.w3-display-topleft {
-  background-color: #02415d;
-  color: #FFFFFF;
 }
 
 .parallax {
@@ -54,6 +52,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+/*Projects CSS*/
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
@@ -140,7 +139,7 @@ body {
   float: left;
   width: 12%;
   display: block;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
 }
 
@@ -153,6 +152,16 @@ body {
 .demo:hover {
   opacity: 1;
 }
+/*About CSS*/
+.card {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: fit-content;
+  margin: 5rem;
+  text-align: center;
+  color: #fff;
+  background-color: #02415d
+}
+/*Contact CSS*/
 
 #contact {
   display: flex; 
@@ -160,14 +169,11 @@ body {
   padding-top: 50px;
 }
 
-
-
 .form-wrapper {
   border: none; /* Remove the previous border style */
   border-radius: 10px; /* Add rounded corners with 10px radius */
   background-color: #02415d; /* Set background color */
-  padding: 15px; /* Add padding for spacing within the form */
-  margin-top: 10px;  /* Add margin to separate the header from the form */
+  padding: 20px; /* Add padding for spacing within the form */
   color: #fff; /* Add white text color for better contrast on dark background */
 }
 
@@ -176,6 +182,7 @@ body {
   margin-bottom: 15px;
   color: #FFFFFF;
 }
+/*Footer CSS*/
 
 #footer {
   background-color: #02415d;
