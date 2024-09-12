@@ -1,4 +1,4 @@
-name: Security Code Review
+name: "TEMPLATE: Security Code Review"
 
 on:
   workflow_call:

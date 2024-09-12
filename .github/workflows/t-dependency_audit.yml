@@ -1,4 +1,4 @@
-name: Dependency Audit
+name: "TEMPLATE: Dependency Audit"
 
 on:
   workflow_call:
@@ -11,8 +11,8 @@ on:
         type: string
 
 jobs:
-  security-code-review:
-    name: Security code review
+  dependency-audit:
+    name: Dependency audit
     runs-on: ${{ inputs.os }}
     steps:
       - name: Checkout code

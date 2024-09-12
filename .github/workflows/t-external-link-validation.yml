@@ -1,4 +1,4 @@
-name: External Link Validation
+name: "TEMPLATE: External Link Validation"
 
 on:
   workflow_call:
