@@ -1,23 +1,27 @@
-<div class="w3-container" id="contact">
+<div class="container-fluid" id="contact">
   <form name="Qcontactform"  method="POST" action="{{ url_for('submit') }}">
     <div class="form-wrapper">  
-      <div class="w3-center">
+      <div>
         <h1>Contact Us</h1>
       </div>
       <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
+        <i class="fa fa-user icon"></i>
+        <label for="name" class="form-label"> Name</label>
         <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
+        <i class="fa fa-envelope icon"></i>
+        <label for="email" class="form-label"> Email address</label>
         <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter your email" required>
       </div>
       <div class="mb-3">
-        <label for="phone" class="form-label">Phone Number</label>
+        <i class="fa fa-phone icon"></i>
+        <label for="phone" class="form-label"> Phone Number</label>
         <input type="tel" class="form-control" name="phone" aria-describedby inputmode="numeric" placeholder="Enter your phone number" required>
       </div>
       <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
+        <i class="fa fa-pen icon"></i>
+        <label for="message" class="form-label"> Message</label>
         <textarea class="form-control" name="message" rows="3" placeholder="Write your message here" required></textarea>
       </div>
         <div id="noShare" class="form-text">We'll never share your contact information with anyone else.</div>
