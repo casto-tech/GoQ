@@ -57,6 +57,9 @@ body {
 .container {
   position: relative;
 }
+.container h3 {
+  text-align: center;
+}
 
 /* Hide the images by default */
 .mySlides {
@@ -64,7 +67,7 @@ body {
 }
 
 .mySlides img {
-  width: 75%;
+  width: 90%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -118,7 +121,7 @@ body {
 
 /* Container for image text */
 .caption-container {
-  width: 75%;
+  width: 90%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -136,11 +139,8 @@ body {
 
 /* Six columns side by side */
 .column {
-  float: left;
   width: 12%;
-  display: block;
-  margin-left: 0;
-  margin-right: auto;
+  display: table;
 }
 
 /* Add a transparency effect for thumnbail images */
@@ -156,10 +156,10 @@ body {
 .card {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: fit-content;
-  margin: 5rem;
+  margin: 4em;
   text-align: center;
-  color: #fff;
-  background-color: #02415d
+  color: #050505;
+  /* background-color: #02415d */
 }
 /*Contact CSS*/
 
