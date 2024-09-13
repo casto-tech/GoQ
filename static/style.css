@@ -1,12 +1,17 @@
+:root {
+  --qBlue: #02415d;
+  --white: #ffffff
+}
+
 body {
   /* background-color: #e6e6e6; */
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 /*Navbar CSS*/
 
 #navbar {
-  background-color: #02415d;
-  color: #FFFFFF;
+  background-color: var(--qBlue);
+  color: var(--white);
   }
 
 #navbar-logo{
@@ -22,7 +27,7 @@ body {
 }
 
 .nav-link {
-  color: #ffffff;
+  color: var(--white);
 }
 /*Header CSS*/
 
@@ -90,7 +95,7 @@ body {
   margin-top: -50px;
   margin-left: 162px;
   margin-right: 173px;
-  color: white;
+  color: var(--white);
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
@@ -107,12 +112,12 @@ body {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: #02415d;
+  background-color: var(--qBlue);
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #02415d;
+  color: var(--qBlue);
   font-size: 12px;
   padding: 8px 180px;
   position: absolute;
@@ -172,21 +177,21 @@ body {
 .form-wrapper {
   border: none; /* Remove the previous border style */
   border-radius: 10px; /* Add rounded corners with 10px radius */
-  background-color: #02415d; /* Set background color */
+  background-color: var(--qBlue); /* Set background color */
   padding: 20px; /* Add padding for spacing within the form */
-  color: #fff; /* Add white text color for better contrast on dark background */
+  color: var(--white); /* Add white text color for better contrast on dark background */
 }
 
 #noShare {
   margin-top: 20px;
   margin-bottom: 15px;
-  color: #FFFFFF;
+  color: var(--white);
 }
 /*Footer CSS*/
 
 #footer {
-  background-color: #02415d;
-  color: #FFFFFF;
+  background-color: var(--qBlue);
+  color: var(--white);
 }
 
 #socials {
