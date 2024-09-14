@@ -6,6 +6,7 @@ env:
     EB_ENVIRONMENT_NAME : "Qog-test-flask-env-1"
     DEPLOY_PACKAGE : "test-app${{ github.sha }}.zip"
     AWS-REGION_NAME : "us-east-1"
+    ACM_CERTIFICATE_ARN : "arn:aws:acm:us-east-1:975049960306:certificate/4d119f00-c518-45dc-ad30-18d064a72a80"
 
 on:
     push:
@@ -42,3 +43,7 @@ jobs:
       
       - name: Deploy AWS EB Application
         run: aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIRONMENT_NAME }} --version-label "Ver-${{ github.sha }}"
+
+      - name: Attach AWS CM Certificate to Load Balancer
+        run: |
+          aws elbv2 describe-load-balancers --names ${{ env.EB_ENVIRONMENT_NAME }}-env | jq -r '.LoadBalancers[0].LoadBalancerArn' | xargs -I {} aws elbv2 create-listener --load-balancer-arn {} --protocol HTTPS --port 443 --certificates CertificateArn=${{ env.ACM_CERTIFICATE_ARN }} --default-actions Type=forward,TargetGroupArn=$(aws elbv2 describe-target-groups --names ${{ env.EB_ENVIRONMENT_NAME }}-env | jq -r '.TargetGroups[0].TargetGroupArn')
