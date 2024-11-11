@@ -1,7 +1,7 @@
 name: "PIPELINE: Dev AWS EB Deploy"
 
 env:
-    EB_PACKAGE_S3_BUCKET_NAME : "test-goq-test-bucket"
+    EB_PACKAGE_S3_BUCKET_NAME : "test-goq-test-bucket-1"
     # EB_APPLICATION_NAME : "qog-test-flask"
     # EB_ENVIRONMENT_NAME : "Qog-test-flask-env-1"
     EB_APPLICATION_NAME : "qog-test-flask-7"
