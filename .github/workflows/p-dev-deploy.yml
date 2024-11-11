@@ -2,12 +2,9 @@ name: "PIPELINE: Dev AWS EB Deploy"
 
 env:
     EB_PACKAGE_S3_BUCKET_NAME : "test-goq-test-bucket-1"
-    # EB_APPLICATION_NAME : "qog-test-flask"
-    # EB_ENVIRONMENT_NAME : "Qog-test-flask-env-1"
     EB_APPLICATION_NAME : "qog-test-flask-7"
     EB_ENVIRONMENT_NAME : "Qog-test-flask-7-env"
     DEPLOY_PACKAGE : "test-app${{ github.sha }}.zip"
-    # AWS-REGION_NAME : "us-east-1"
     AWS-REGION_NAME : "us-west-2"
     ACM_CERTIFICATE_ARN : "arn:aws:acm:us-west-2:975049960306:certificate/c4b0b548-c8e4-457a-838b-8da0128a057e"
 
