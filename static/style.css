@@ -57,6 +57,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#projects {
+  padding-top: 100px;
+}
+
 /*Projects CSS*/
 /* Position the image container (needed to position the left and right arrows) */
 .container {
@@ -171,7 +176,7 @@ body {
 #contact {
   display: flex; 
   justify-content: center; /* Horizontally centers the content within the container */
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .form-wrapper {
@@ -180,6 +185,10 @@ body {
   background-color: var(--qBlue); /* Set background color */
   padding: 20px; /* Add padding for spacing within the form */
   color: var(--white); /* Add white text color for better contrast on dark background */
+}
+
+#about {
+  padding-top: 100px;
 }
 
 #noShare {
