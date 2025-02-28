@@ -5,6 +5,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from email_handler import create_message, send_message
 from flask_font_awesome import FontAwesome
+from flask import send_from_directory, current_app
 
 load_dotenv()
 
@@ -21,6 +22,9 @@ SCOPES = [os.getenv("SCOPES")]
 def home():
     return render_template('base.html')
 
+@application.route('/robots.txt')
+def robots():
+    return send_from_directory(current_app.static_folder, 'robots.txt')
 
 @application.route('/submit', methods=['POST'])
 def submit():
