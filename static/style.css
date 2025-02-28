@@ -198,14 +198,13 @@ body {
   color: var(--white); /* Add white text color for better contrast on dark background */
 }
 
-
 #noShare {
   margin-top: 20px;
   margin-bottom: 15px;
   color: var(--white);
 }
-/*Footer CSS*/
 
+/*Footer CSS*/
 #footer {
   background-color: var(--qBlue);
   color: var(--white);
@@ -215,5 +214,5 @@ body {
   float: right;
   margin: auto;
   padding-top: 5%;
-  font-size: 23px;
+  font-size: 30px;
 }
