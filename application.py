@@ -1,39 +1,64 @@
 import os
-from flask import Flask, render_template, request
+import logging
+import re
+from flask import Flask, render_template, request, send_from_directory, current_app
+from markupsafe import escape
 from dotenv import load_dotenv  # type: ignore
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from email_handler import create_message, send_message
 from flask_font_awesome import FontAwesome
-from flask import send_from_directory, current_app
 
 load_dotenv()
 
 application = Flask(__name__)
 font_awesome = FontAwesome(application)
 
-application.secret_key = os.getenv("SECRET_KEY")
+application.secret_key = os.urandom(24)
 SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")
 USER_TO_IMPERSONATE = os.getenv("USER_TO_IMPERSONATE")
 SCOPES = [os.getenv("SCOPES")]
+
+logging.basicConfig(filename='app.log', level=logging.ERROR)
+
+
+def is_valid_email(email):
+    # Basic email validation regex
+    return re.match(r"[^@]+@[^@]+\.[^@]+", email)
+
+
+def is_valid_phone(phone):
+    # Basic phone number validation regex. Adjust as needed
+    return re.match(r"^\+?\d{7,15}$", phone)
+
+
+@application.route('/robots.txt')
+def robots():
+    return send_from_directory(current_app.static_folder, 'robots.txt')
 
 
 @application.route('/')
 def home():
     return render_template('base.html')
 
-@application.route('/robots.txt')
-def robots():
-    return send_from_directory(current_app.static_folder, 'robots.txt')
 
 @application.route('/submit', methods=['POST'])
 def submit():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    phone = request.form.get('phone')
-    message = request.form.get('message')
-
     if request.method == 'POST':
+        # Escape user input to prevent XSS vulnerabilities
+        name = escape(request.form.get('name', ''))
+        email = request.form.get('email', '')
+        phone = request.form.get('phone', '')
+        message = escape(request.form.get('message', ''))
+
+        if not is_valid_email(email):
+            return render_template('base.html', error="Invalid email address", name=name, phone=phone, message=message, error_field="email")
+
+        if not is_valid_phone(phone):
+            return render_template('base.html', error="Please enter a valid phone number", name=name, email=email, message=message, error_field="phone")
+
+        email = escape(email)
+        phone = escape(phone)
         try:
             credentials = service_account.Credentials.from_service_account_file(
                 SERVICE_ACCOUNT_FILE, scopes=SCOPES)
@@ -42,18 +67,18 @@ def submit():
 
             service = build('gmail', 'v1', credentials=delegated_credentials)
 
-            sender = os.getenv("SENDER")
-            to = os.getenv("TO")
-            subject = f"New Contact Form Submission: {name}"
-            message_text = f" NAME: {name}\n EMAIL: {email}\n PHONE: {phone}\n\n MESSAGE: {message}"
+            subject = f"New Contact Form Submission: {escape(name)}"
+            message_text = f"NAME: {name}\nEMAIL: {email}\nPHONE: {phone}\n\nMESSAGE: {message}"
 
-            msg = create_message(sender, to, subject, message_text)
+            msg = create_message(os.getenv("SENDER"), os.getenv("TO"), subject, message_text)
             send_message(service, 'me', msg)
             return render_template('success.html')
 
         except Exception as error:
-            print(f'An error occurred: {error}')
-            return render_template('500.html', success=False)
+            logging.exception('An error occurred during form submission')
+            return render_template('500.html'), 500
+    else:
+        return render_template('base.html')
 
 
 @application.errorhandler(404)

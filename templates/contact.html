@@ -1,9 +1,12 @@
 <div class="container-fluid" id="contact">
-  <form name="Qcontactform"  method="POST" action="{{ url_for('submit') }}">
+  <form name="Qcontactform"  method="POST" action="{{ url_for('submit') }}" id="contactForm">
     <div class="form-wrapper">  
       <div>
         <h1>Contact Us</h1>
       </div>
+      {% if error %}
+                <p style="color: red;">{{ error }}</p>
+      {% endif %}
       <div class="mb-3">
         <i class="fa fa-user icon"></i>
         <label for="name" class="form-label"> Name</label>
@@ -29,4 +32,25 @@
       </div>
   </form>
 </div>
+
+<script>
+  document.getElementById('submitButton').addEventListener('click', function(event) {
+      const phone = document.getElementById('phone').value;
+      const phoneRegex = /^\+?\d{7,15}$/;
+
+      if (!phoneRegex.test(phone)) {
+          event.preventDefault();
+          document.getElementById('phoneError').style.display = 'inline';
+      } else {
+          document.getElementById('phoneError').style.display = 'none';
+      }
+  });
+
+  {% if error_field %}
+      document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('contact').scrollIntoView();
+          document.getElementById('{{ error_field }}').focus(); // Optionally focus the error field
+      });
+  {% endif %}
+</script>
 <br/>
