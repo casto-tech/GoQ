@@ -1,14 +1,15 @@
 :root {
   --qBlue: #02415d;
-  --white: #ffffff
+  --white: #ffffff;
+  --grey: #b6b0b0f5;
 }
 
 body {
   /* background-color: #e6e6e6; */
   background-color: var(--white);
 }
-/*Navbar CSS*/
 
+/*Navbar CSS*/
 #navbar {
   background-color: var(--qBlue);
   color: var(--white);
@@ -58,11 +59,12 @@ body {
     background-size: cover;
 }
 
-#projects {
-  padding-top: 100px;
-}
 
 /*Projects CSS*/
+#projects {
+  padding-top: 100px;
+  margin-top: -80px
+}
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
@@ -162,17 +164,26 @@ body {
 .demo:hover {
   opacity: 1;
 }
+
 /*About CSS*/
+#about { /*Targets the card now*/
+  padding-top: 100px;
+}
+
 .card {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: fit-content;
-  margin: 4em;
-  text-align: center;
+  /* margin: 2em; */
   color: #050505;
-  /* background-color: #02415d */
 }
-/*Contact CSS*/
 
+.card-body {
+  padding: 10px;
+  text-align: center; /*added to make the text left aligned.*/
+}
+
+
+/*Contact CSS*/
 #contact {
   display: flex; 
   justify-content: center; /* Horizontally centers the content within the container */
@@ -187,9 +198,6 @@ body {
   color: var(--white); /* Add white text color for better contrast on dark background */
 }
 
-#about {
-  padding-top: 100px;
-}
 
 #noShare {
   margin-top: 20px;
