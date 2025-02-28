@@ -74,7 +74,7 @@ def submit():
             send_message(service, 'me', msg)
             return render_template('success.html')
 
-        except Exception as error:
+        except Exception:
             logging.exception('An error occurred during form submission')
             return render_template('500.html'), 500
     else:

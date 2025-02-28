@@ -401,3 +401,22 @@ INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:54:56] "[36mGET /static/cg/cg.png H
 INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:54:56] "[36mGET /static/projects/IMG_6984.jpg HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:54:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:54:56] "[36mGET /static/header/header_img.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:21] "POST /submit HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/projects/IMG_6982.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/logo/White_logo_no_background.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/projects/IMG_6984.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/projects/IMG_6985.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/projects/IMG_6989.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/projects/IMG_0579.JPG HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/projects/IMG_0580.JPG HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/projects/IMG_0582.JPG HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/projects/IMG_0079.JPG HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/cg/cg.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 12:55:23] "[36mGET /static/header/header_img.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\git\\GoQ\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-693-662
