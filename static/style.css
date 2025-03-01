@@ -89,11 +89,11 @@ body {
 }
 
 .mySlides img {
-  width: 90%;
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+  margin: auto;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -110,13 +110,13 @@ body {
   width: auto;
   padding: 15px;
   margin-top: -50px;
-  margin-left: 64px;
-  margin-right: 77px;
+  margin-left: 0;
+  margin-right: 8px;
   color: var(--qBlue);
-  /* background-color: var(--qBlue); */
+  background-color: var(--white);
   font-weight: bold;
   font-size: 20px;
-  /* border-radius: 0 3px 3px 0; */
+  border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -128,54 +128,82 @@ body {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
+/* .prev:hover,
 .next:hover {
   background-color: var(--white);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: var(--qBlue);
-  font-size: 12px;
-  padding: 5px 100px;
-  position: absolute;
-  top: 0;
-}
+} */
 
 /* Container for image text */
 .caption-container {
-  width: 90%;
+  width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   text-align: center;
   background-color: #222;
   padding: 2px 16px;
   color: white;
 }
 
+.row {
+  text-align: center; /* Center the thumbnails */
+  margin: 1px auto; /* Add some space and center */
+  max-width: 100%; /* Limit the width for responsiveness */
+}
+
 .row:after {
   content: "";
-  display: inline-block;;
+  display: table;
   clear: both;
 }
 
-/* Six columns side by side */
+/* columns side by side */
 .column {
   width: 12.5%;
   display: inline-block;
-  margin-top: 1em;
+  padding: 1px;
+  margin-top: 1px;
   text-align: center;
 }
 
 /* Add a transparency effect for thumnbail images */
 .demo {
-  opacity: 0.6;
+  opacity: 0.5;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .mySlides img {
+      height: 300px; /* Adjust main image height for smaller screens */
+  }
+
+  .prev,
+  .next {
+      top: 30%; /* Adjust arrow position for smaller screens */
+      margin-left: 0;
+      margin-right: 10px;
+  }
+
+  .column {
+      width: 25%; /* Adjust thumbnail column width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .mySlides img {
+      height: 200px; /* Further adjust main image height for very small screens */
+  }
+
+  .column {
+      width: 33.33%; /* Adjust thumbnail column width for very small screens */
+  }
 }
 
 /*About CSS*/
