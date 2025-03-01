@@ -13,14 +13,15 @@ on:
         branches-ignore: [ main ]
 
 jobs:
-code_checks:
+  code_checks:
     name: "Run Code Checks"
-    uses: ./.github/workflows/p-dev-code-checks.yml
+    uses: ./.github/workflows/p-dev_code_checks.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
 
   deploy_application_to_EB:
+    
     needs: [code_checks]
     runs-on: ubuntu-latest
     steps:
