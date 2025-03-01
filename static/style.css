@@ -5,8 +5,7 @@
 }
 
 body {
-  /* background-color: #e6e6e6; */
-  background-color: var(--white);
+  background-color: #e7e7e7e7;
 }
 
 #navbar {
@@ -33,16 +32,13 @@ body {
   border: none;
 }
 
-/* Aligns links to the right in mobile mode */
 @media (max-width: 991.98px) {
   #navbar-links .navbar-nav {
       text-align: right;
-      /* padding-right: 15px; */
   }
 }
 
 /*Header CSS*/
-
 #home {
   position: relative;
   display: flex;
@@ -57,12 +53,8 @@ body {
 }
 
 .parallax {
-    /* The image used */
     background-image: url('header/header_img.webp');
-
-    /* Set a specific height */
     min-height: 600px; 
-  
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -75,7 +67,6 @@ body {
   padding-top: 100px;
   margin-top: -80px
 }
-/* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
 }
@@ -96,7 +87,6 @@ body {
   margin: auto;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
 .cursor {
   cursor: pointer;
 }
@@ -111,29 +101,21 @@ body {
   padding: 15px;
   margin-top: -50px;
   margin-left: 0;
-  margin-right: 8px;
+  margin-right: 11px;
   color: var(--qBlue);
   background-color: var(--white);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-/* .prev:hover,
-.next:hover {
-  background-color: var(--white);
-} */
-
-/* Container for image text */
 .caption-container {
   width: 100%;
   display: block;
@@ -145,9 +127,9 @@ body {
 }
 
 .row {
-  text-align: center; /* Center the thumbnails */
-  margin: 1px auto; /* Add some space and center */
-  max-width: 100%; /* Limit the width for responsiveness */
+  text-align: center;
+  margin: 1px auto;
+  max-width: 100%;
 }
 
 .row:after {
@@ -156,7 +138,6 @@ body {
   clear: both;
 }
 
-/* columns side by side */
 .column {
   width: 12.5%;
   display: inline-block;
@@ -165,7 +146,6 @@ body {
   text-align: center;
 }
 
-/* Add a transparency effect for thumnbail images */
 .demo {
   opacity: 0.5;
     width: 100%;
@@ -182,62 +162,61 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .mySlides img {
-      height: 300px; /* Adjust main image height for smaller screens */
+      height: 300px;
   }
 
   .prev,
   .next {
-      top: 30%; /* Adjust arrow position for smaller screens */
+      top: 30%;
       margin-left: 0;
       margin-right: 10px;
   }
 
   .column {
-      width: 25%; /* Adjust thumbnail column width for smaller screens */
+      width: 25%;
   }
 }
 
 @media (max-width: 480px) {
   .mySlides img {
-      height: 200px; /* Further adjust main image height for very small screens */
+      height: 200px;
   }
 
   .column {
-      width: 33.33%; /* Adjust thumbnail column width for very small screens */
+      width: 33.33%;
   }
 }
 
 /*About CSS*/
-#about { /*Targets the card now*/
+#about {
   padding-top: 100px;
 }
 
 .card {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: fit-content;
-  /* margin: 2em; */
   color: #050505;
 }
 
 .card-body {
   padding: 10px;
-  text-align: center; /*added to make the text left aligned.*/
+  text-align: center;
 }
 
 
 /*Contact CSS*/
 #contact {
   display: flex; 
-  justify-content: center; /* Horizontally centers the content within the container */
+  justify-content: center;
   padding-top: 100px;
 }
 
 .form-wrapper {
-  border: none; /* Remove the previous border style */
-  border-radius: 10px; /* Add rounded corners with 10px radius */
-  background-color: var(--qBlue); /* Set background color */
-  padding: 20px; /* Add padding for spacing within the form */
-  color: var(--white); /* Add white text color for better contrast on dark background */
+  border: none; 
+  border-radius: 10px;
+  background-color: var(--qBlue);
+  padding: 20px;
+  color: var(--white);
 }
 
 #noShare {
