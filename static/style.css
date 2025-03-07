@@ -240,5 +240,6 @@ body {
 
 /*Success Page*/
 #success {
-  margin-bottom: 5px;
+  justify-content: center;
+  padding: 15%;
 }

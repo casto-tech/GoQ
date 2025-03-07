@@ -3,10 +3,9 @@
 {% block title %}Success!{% endblock %}
 
 {% block content %}
-<div class="container mt-5 text-center">
+<div class="container mt-5 text-center" id="success">
     <h1>Success!</h1>
     <p>Your message has been sent.</p>
-    <img src="{{ url_for('static', filename='images/holeinone.JPG')}}" id="success">
     <p><a href="/" class="btn btn-primary">Go Back Home</a></p>
 </div>
 {% endblock %}
