@@ -237,3 +237,8 @@ body {
   padding-top: 5%;
   font-size: 30px;
 }
+
+/*Success Page*/
+#success {
+  margin-bottom: 5px;
+}
