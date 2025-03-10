@@ -225,6 +225,15 @@ body {
   color: var(--white);
 }
 
+/*Pros CSS*/
+#pros {
+width: 100%;
+}
+
+#pros-text {
+  margin-left: 1%;
+}
+
 /*Footer CSS*/
 #footer {
   background-color: var(--qBlue);
