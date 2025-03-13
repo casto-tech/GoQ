@@ -61,5 +61,3 @@ class TestCreateMessage:
         assert isinstance(result, dict)
         assert 'raw' in result
         assert isinstance(result['raw'], str)
-
-    
