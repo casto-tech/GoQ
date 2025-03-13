@@ -26,7 +26,7 @@ def client(test_app: Flask) -> FlaskClient:
                 soup = BeautifulSoup(response.data, 'html.parser')
                 csrf_token = soup.find('input', {'id': 'csrf_token'})['value']
                 client.csrf_token = csrf_token
-                print(client.csrf_token) #add this line.
+                print(client.csrf_token)
                 yield client
 
 
@@ -37,6 +37,6 @@ def test_submit_form_success(client: FlaskClient):
         'email': 'test@example.com',
         'phone': '123-456-7890',
         'message': 'This is a test message',
-        'csrf_token': client.csrf_token  # Corrected line
+        'csrf_token': client.csrf_token
     })
     assert response.status_code == 200
