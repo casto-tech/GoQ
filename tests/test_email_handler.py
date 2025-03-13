@@ -1,8 +1,9 @@
-from application import create_message
+from email_handler import create_message
 
 
 class TestCreateMessage:
     def test_create_message_basic(self):
+        """Tests create_message with basic inputs."""
         sender = "sender@example.com"
         to = "recipient@example.com"
         subject = "Test Subject"
@@ -15,6 +16,7 @@ class TestCreateMessage:
         assert isinstance(result['raw'], str)
 
     def test_create_message_empty_fields(self):
+        """Tests create_message with empty input fields."""
         sender = ""
         to = ""
         subject = ""
@@ -25,8 +27,10 @@ class TestCreateMessage:
         assert isinstance(result, dict)
         assert 'raw' in result
         assert isinstance(result['raw'], str)
+        assert isinstance(result['raw'], str)
 
     def test_create_message_special_characters(self):
+        """Tests create_message with special characters in inputs."""
         sender = "sender@example.com"
         to = "recipient@example.com"
         subject = "Test Subject with ñ and 漢字"
@@ -37,8 +41,10 @@ class TestCreateMessage:
         assert isinstance(result, dict)
         assert 'raw' in result
         assert isinstance(result['raw'], str)
+        assert isinstance(result['raw'], str)
 
     def test_create_message_long_content(self):
+        """Tests create_message with very long subject and message."""
         sender = "sender@example.com"
         to = "recipient@example.com"
         subject = "A" * 1000  # Very long subject
@@ -49,8 +55,10 @@ class TestCreateMessage:
         assert isinstance(result, dict)
         assert 'raw' in result
         assert isinstance(result['raw'], str)
+        assert isinstance(result['raw'], str)
 
     def test_create_message_multiple_recipients(self):
+        """Tests create_message with multiple recipients in the 'to' field."""
         sender = "sender@example.com"
         to = "recipient1@example.com, recipient2@example.com"
         subject = "Test Subject"
@@ -60,4 +68,5 @@ class TestCreateMessage:
 
         assert isinstance(result, dict)
         assert 'raw' in result
+        assert isinstance(result['raw'], str)
         assert isinstance(result['raw'], str)

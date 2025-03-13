@@ -1,37 +1,42 @@
 import pytest
-import os
 from unittest.mock import MagicMock, patch
-from application import application
+from flask import Flask
+from flask.testing import FlaskClient
+from bs4 import BeautifulSoup
 
 
 # Mock the Gmail API
 def mock_build(service, version, credentials=None):
+    """Mocks the googleapiclient.discovery.build function."""
     return MagicMock()
 
 
 def mock_send_message(service, user_id, message):
+    """Mocks the application.send_message function."""
     pass
 
 
-os.environ["SENDER"] = os.getenv("SENDER")
-os.environ["TO"] = os.getenv("TO")
-
-
 @pytest.fixture
-def client():
-    application.config['TESTING'] = True
-    client = application.test_client()
-    return client
+def client(test_app: Flask) -> FlaskClient:
+    """Fixture to create a Flask test client with mocked Gmail API."""
+    with test_app.test_client() as client:
+        with patch('googleapiclient.discovery.build', side_effect=mock_build):
+            with patch('application.send_message', side_effect=mock_send_message):
+                response = client.get('/')
+                soup = BeautifulSoup(response.data, 'html.parser')
+                csrf_token = soup.find('input', {'id': 'csrf_token'})['value']
+                client.csrf_token = csrf_token
+                print(client.csrf_token) #add this line.
+                yield client
 
 
-def test_submit_form_success(client):
-    with patch('googleapiclient.discovery.build', side_effect=mock_build):
-        with patch('application.send_message', side_effect=mock_send_message):
-            response = client.post('/submit', data={
-                'name': 'Test User',
-                'email': 'test@example.com',
-                'phone': '123-456-7890',
-                'message': 'This is a test message'
-            })
-
-            assert response.status_code == 200
+def test_submit_form_success(client: FlaskClient):
+    """Tests successful form submission to the '/submit' route."""
+    response = client.post('/submit', data={
+        'name': 'Test User',
+        'email': 'test@example.com',
+        'phone': '123-456-7890',
+        'message': 'This is a test message',
+        'csrf_token': client.csrf_token  # Corrected line
+    })
+    assert response.status_code == 200
