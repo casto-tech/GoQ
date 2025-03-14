@@ -23,7 +23,7 @@ limiter = Limiter(
     get_remote_address,
     app=application,
     storage_uri="memory://",
-    default_limits=["3 per hour"]
+    default_limits=["5 per hour"]
 )
 
 
@@ -46,7 +46,7 @@ def home():
 
 
 @application.route('/submit', methods=['POST'])
-@limiter.limit("3 per hour")
+@limiter.limit("5 per hour")
 def submit():
     form = ContactForm()
     if form.validate_on_submit():
