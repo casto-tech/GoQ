@@ -1,32 +1,105 @@
 <div class="container-fluid" id="contact">
-  <form name="Qcontactform"  method="POST" action="{{ url_for('submit') }}">
-    <div class="form-wrapper">  
-      <div>
-        <h1>Contact Us</h1>
-      </div>
-      <div class="mb-3">
-        <i class="fa fa-user icon"></i>
-        <label for="name" class="form-label"> Name</label>
-        <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
-      </div>
-      <div class="mb-3">
-        <i class="fa fa-envelope icon"></i>
-        <label for="email" class="form-label"> Email address</label>
-        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter your email" required>
-      </div>
-      <div class="mb-3">
-        <i class="fa fa-phone icon"></i>
-        <label for="phone" class="form-label"> Phone Number</label>
-        <input type="tel" class="form-control" name="phone" aria-describedby inputmode="numeric" placeholder="Enter your phone number" required>
-      </div>
-      <div class="mb-3">
-        <i class="fa fa-pen icon"></i>
-        <label for="message" class="form-label"> Message</label>
-        <textarea class="form-control" name="message" rows="3" placeholder="Write your message here" required></textarea>
-      </div>
-        <div id="noShare" class="form-text">We'll never share your contact information with anyone else.</div>
-          <button type="submit" value="submit" class="btn btn-primary">Submit</button>
-      </div>
-  </form>
+    <form name="Qcontactform" method="POST" action="{{ url_for('submit') }}" id="contactForm">
+        <div class="form-wrapper">
+            <div>
+                <h1>Contact Us</h1>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            {{ form.hidden_tag() }}  <div class="mb-3">
+                <i class="fa fa-user icon"></i>
+                <label for="name" class="form-label">Name</label>
+                {{ form.name(class="form-control", placeholder="Enter your name") }}
+                {% for error in form.name.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="mb-3">
+                <i class="fa fa-envelope icon"></i>
+                <label for="email" class="form-label">Email address</label>
+                {{ form.email(class="form-control", placeholder="Enter your email") }}
+                {% for error in form.email.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="mb-3">
+                <i class="fa fa-phone icon"></i>
+                <label for="phone" class="form-label">Phone Number</label>
+                {{ form.phone(class="form-control", placeholder="Enter your phone number") }}
+                {% for error in form.phone.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="mb-3">
+                <i class="fa fa-pen icon"></i>
+                <label for="message" class="form-label">Message</label>
+                {{ form.message(class="form-control", rows="3", placeholder="Write your message here") }}
+                {% for error in form.message.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div id="noShare" class="form-text">We'll never share your contact information with anyone else.</div>
+            <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
 </div>
-<br/>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        const phone = document.getElementById('phone').value;
+        const phoneRegex = ^\d{10}$|^\d{3}-\d{3}-\d{4}$|^\d{7}$|^\d{3}-\d{4}$;
+        const phoneError = document.getElementById('phoneError');
+
+        const email = document.getElementById('email').value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailError = document.getElementById('emailError');
+
+        let hasErrors = false;
+
+        if (!phoneRegex.test(phone)) {
+            event.preventDefault();
+            hasErrors = true;
+            if(!phoneError){
+              const phoneInput = document.getElementById('phone');
+              const errorSpan = document.createElement('span');
+              errorSpan.id = "phoneError";
+              errorSpan.className = "text-danger";
+              errorSpan.textContent = "Invalid phone number: Do not inlcude ( ).";
+              phoneInput.parentNode.insertBefore(errorSpan, phoneInput.nextSibling);
+            }
+        } else {
+            if(phoneError){
+              phoneError.remove();
+            }
+        }
+
+        if (!emailRegex.test(email)) {
+            event.preventDefault();
+            hasErrors = true;
+            if(!emailError){
+              const emailInput = document.getElementById('email');
+              const errorSpan = document.createElement('span');
+              errorSpan.id = "emailError";
+              errorSpan.className = "text-danger";
+              errorSpan.textContent = "Invalid email address.";
+              emailInput.parentNode.insertBefore(errorSpan, emailInput.nextSibling);
+            }
+        } else {
+            if(emailError){
+              emailError.remove();
+            }
+        }
+
+        if (hasErrors) {
+            event.preventDefault(); // Prevents form submit if there are any errors.
+        }
+    });
+</script>
+<br />
