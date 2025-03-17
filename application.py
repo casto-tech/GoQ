@@ -93,4 +93,4 @@ def set_security_headers(response):
 
 
 if __name__ == '__main__':
-    application.run()
+    application.run(debug=os.getenv("DEBUG"))
