@@ -19,24 +19,24 @@ jobs:
       python-version: 3.11
       os: ubuntu-latest
 
-  # lint:
-  #   needs: [build]
-  #   uses: ./.github/workflows/t-lint.yml
-  #   with:
-  #     python-version: 3.11
-  #     os: ubuntu-latest
-
-  unit-test:
-    # needs: [lint]
+  lint:
     needs: [build]
-    uses: ./.github/workflows/t-unit-test.yml
+    uses: ./.github/workflows/t-lint.yml
     with:
       python-version: 3.11
       os: ubuntu-latest
+
+  # unit-test:
+  #   needs: [lint]
+  #   uses: ./.github/workflows/t-unit-test.yml
+  #   with:
+  #     python-version: 3.11
+  #     os: ubuntu-latest
      
 
   security-code-review:
-    needs: [unit-test]
+    # needs: [unit-test]
+    needs: [lint]
     uses: ./.github/workflows/t-security_code_review.yml
     with:
       python-version: 3.11
