@@ -54,7 +54,7 @@
 <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         const phone = document.getElementById('phone').value;
-        const phoneRegex = /^\+?\d{7,15}$/;
+        const phoneRegex = ^\d{10}$|^\d{3}-\d{3}-\d{4}$|^\d{7}$|^\d{3}-\d{4}$;
         const phoneError = document.getElementById('phoneError');
 
         const email = document.getElementById('email').value;
@@ -71,7 +71,7 @@
               const errorSpan = document.createElement('span');
               errorSpan.id = "phoneError";
               errorSpan.className = "text-danger";
-              errorSpan.textContent = "Invalid phone number.";
+              errorSpan.textContent = "Invalid phone number: Do not inlcude ( ).";
               phoneInput.parentNode.insertBefore(errorSpan, phoneInput.nextSibling);
             }
         } else {
