@@ -23,13 +23,13 @@ def client(test_app: Flask) -> FlaskClient:
     with test_app.test_client() as client:
         with patch('googleapiclient.discovery.build', side_effect=mock_build):
             with patch('application.send_message', side_effect=mock_send_message):
-                # form = ContactForm
-                response = client.get('/')
-                soup = BeautifulSoup(response.data, 'html.parser')
-                csrf_token = soup.find('input', {'id': 'csrf_token'})['value']
-                client.csrf_token = csrf_token
-                print(client.csrf_token)
-                yield client
+                with test_app.app_context():
+                    response = client.get('/')
+                    soup = BeautifulSoup(response.data, 'html.parser')
+                    csrf_token = soup.find('input', {'id': 'csrf_token'})['value']
+                    client.csrf_token = csrf_token
+                    print(client.csrf_token)
+                    yield client
 
 
 def test_submit_form_success(client: FlaskClient):
