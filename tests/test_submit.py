@@ -38,5 +38,5 @@ def test_submit_form_success(client: FlaskClient):
         'phone': '123-456-7890',
         'message': 'This is a test message',
         'csrf_token': client.csrf_token
-    })
+    }, follow_redirects=True)
     assert response.status_code == 200
