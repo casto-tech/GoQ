@@ -19,12 +19,6 @@ font_awesome = FontAwesome(application)
 
 application.secret_key = os.urandom(24)
 csrf = CSRFProtect(application)
-# limiter = Limiter(
-#     get_remote_address,
-#     app=application,
-#     storage_uri="memory://",
-#     default_limits=["5 per hour"]
-# )
 
 
 SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")
@@ -46,7 +40,6 @@ def home():
 
 
 @application.route('/submit', methods=['POST'])
-# @limiter.limit("5 per hour")
 def submit():
     form = ContactForm()
     if form.validate_on_submit():
