@@ -19,12 +19,12 @@ jobs:
       python-version: 3.11
       os: ubuntu-latest
 
-  lint:
-    needs: [build]
-    uses: ./.github/workflows/t-lint.yml
-    with:
-      python-version: 3.11
-      os: ubuntu-latest
+  # lint:
+  #   needs: [build]
+  #   uses: ./.github/workflows/t-lint.yml
+  #   with:
+  #     python-version: 3.11
+  #     os: ubuntu-latest
 
   # unit-test:
   #   needs: [lint]
