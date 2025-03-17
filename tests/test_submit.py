@@ -3,7 +3,10 @@ from unittest.mock import MagicMock, patch
 from flask import Flask
 from flask.testing import FlaskClient
 from bs4 import BeautifulSoup
+<<<<<<< HEAD
 from contact_form import ContactForm
+=======
+>>>>>>> main
 
 
 # Mock the Gmail API
@@ -23,7 +26,10 @@ def client(test_app: Flask) -> FlaskClient:
     with test_app.test_client() as client:
         with patch('googleapiclient.discovery.build', side_effect=mock_build):
             with patch('application.send_message', side_effect=mock_send_message):
+<<<<<<< HEAD
                 form = ContactForm
+=======
+>>>>>>> main
                 response = client.get('/')
                 soup = BeautifulSoup(response.data, 'html.parser')
                 csrf_token = soup.find('input', {'id': 'csrf_token'})['value']
