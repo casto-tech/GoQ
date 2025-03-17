@@ -9,8 +9,8 @@ from email_handler import create_message, send_message
 from contact_form import ContactForm
 from flask_font_awesome import FontAwesome
 from flask_wtf.csrf import CSRFProtect
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
+# from flask_limiter import Limiter
+# from flask_limiter.util import get_remote_address
 
 load_dotenv()
 
