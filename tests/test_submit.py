@@ -23,7 +23,7 @@ def client(test_app: Flask) -> FlaskClient:
     with test_app.test_client() as client:
         with patch('googleapiclient.discovery.build', side_effect=mock_build):
             with patch('application.send_message', side_effect=mock_send_message):
-                form = ContactForm
+                # form = ContactForm
                 response = client.get('/')
                 soup = BeautifulSoup(response.data, 'html.parser')
                 csrf_token = soup.find('input', {'id': 'csrf_token'})['value']
