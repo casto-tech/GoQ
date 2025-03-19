@@ -116,16 +116,6 @@ body {
   border-radius: 3px 0 0 3px;
 }
 
-.caption-container {
-  width: 100%;
-  display: block;
-  margin: auto;
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
 .row {
   text-align: center;
   margin: 1px auto;

@@ -4,17 +4,17 @@
 
 <div class="container">
     {% set image_data = [
-        ('IMG_7053.jpg', 'Clyde Hill'),
-        ('IMG_7055.jpg', 'Putting Green Garden'),
-        ('IMG_7162.jpg', 'Duvall'),
-        ('IMG_0579.JPG', 'Green'),
-        ('IMG_0580.JPG', 'Tee'),
-        ('IMG_0582.JPG', 'Putting Green'),
-        ('IMG_0079.JPG', 'Snoqualmie'),
-        ('IMG_7163.jpg', 'Putting Green')
+        ('IMG_7053.jpg'),
+        ('IMG_7055.jpg'),
+        ('IMG_7162.jpg'),
+        ('IMG_0579.JPG'),
+        ('IMG_0580.JPG'),
+        ('IMG_0582.JPG'),
+        ('IMG_0079.JPG'),
+        ('IMG_7163.jpg')
     ] %}
 
-    {% for filename, alt_text in image_data %}
+    {% for filename in image_data %}
         <div class="mySlides">
             <img src="{{ url_for('static', filename='projects/' + filename) }}">
         </div>
@@ -23,12 +23,8 @@
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-    <div class="caption-container">
-        <p id="caption"></p>
-    </div>
-
     <div class="row">
-        {% for filename, alt_text in image_data %}
+        {% for filename in image_data %}
             <div class="column">
                 <img class="demo cursor" src="{{ url_for('static', filename='projects/' + filename) }}" style="width:100%" onclick="currentSlide({{ loop.index }})" alt="{{ alt_text }}">
             </div>
