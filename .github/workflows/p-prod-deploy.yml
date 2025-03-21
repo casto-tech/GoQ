@@ -6,7 +6,7 @@ env:
     EB_ENVIRONMENT_NAME : "Qog-app-env"
     DEPLOY_PACKAGE : "goq-app${{ github.sha }}.zip"
     AWS-REGION_NAME : "us-west-2"
-    ACM_CERTIFICATE_ARN : "arn:aws:acm:us-west-2:975049960306:certificate/7bf877c3-0fc7-452e-a018-acf5eaa7ba6b"
+    ACM_CERTIFICATE_ARN : "arn:aws:acm:us-west-2:975049960306:certificate/f8cc77fa-3ab6-4dc3-99c7-2b4bb6c860ae"
 
 on: 
   push:
