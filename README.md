@@ -7,7 +7,7 @@
  |:-:|:-|
  | **Environment** | ![Elastic Beanstalk](https://img.shields.io/badge/AWS-Elastic%20Beanstalk-success?logo=amazonwebservices) |
  | **Application** | ![Python Version](https://img.shields.io/badge/python-v3.12-blue.svg?logo=python&logoColor=FFD43B) <br> ![Flask Version](https://img.shields.io/badge/Flask-v3.0.3-blue.svg?logo=Flask)  |
- | **Development Status** | https://github.com/casto-tech/GoQ/labels/Completed |
+ | **Development Status** | https://github.com/casto-tech/GoQ/labels/completed |
  | **Production Site Status** |  ![Website Status](https://img.shields.io/website?url=https://greensonq.com&up_message=Online&down_message=Offline&cacheSeconds=30&label=greensonq.com) |
  | **Development Site Status** |  ![Website Status](https://img.shields.io/website?url=http://dev.greensona.com&up_message=Online&down_message=Offline&cacheSeconds=30&label=dev.greensonq.com) |
  | **Production Deploy** | [![PROD DEPLOY](https://github.com/casto-tech/GoQ/actions/workflows/p-prod-deploy.yml/badge.svg)](https://github.com/casto-tech/GoQ/actions/workflows/p-prod-deploy.yml) |
