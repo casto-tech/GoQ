@@ -5,13 +5,13 @@
 
  | **_Infrastructure_** | |
  |:-:|:-|
- | **Environment** | ![Elastic Beanstalk](https://img.shields.io/badge/AWS-Elastic%20Beanstalk-success?logo=amazonwebservices) |
+ | **Environment** | ![Elastic Beanstalk](https://img.shields.io/badge/AWS-Elastic%20Beanstalk-success?logo=amazonwebservices) <br> ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-API-4285F4?style=flat&logo=googlecloud&logoColor=white) |
  | **Application** | ![Python Version](https://img.shields.io/badge/python-v3.12-blue.svg?logo=python&logoColor=FFD43B) <br> ![Flask Version](https://img.shields.io/badge/Flask-v3.0.3-blue.svg?logo=Flask)  |
- | **Development Status** | https://github.com/users/casto-tech/projects/2/views/1?pane=info&statusUpdateId=101982 |
+ | **Development Status** | ![](https://github.com/casto-tech/GoQ/labels/completed) |
  | **Production Site Status** |  ![Website Status](https://img.shields.io/website?url=https://greensonq.com&up_message=Online&down_message=Offline&cacheSeconds=30&label=greensonq.com) |
  | **Development Site Status** |  ![Website Status](https://img.shields.io/website?url=http://dev.greensona.com&up_message=Online&down_message=Offline&cacheSeconds=30&label=dev.greensonq.com) |
- | **Production Deploy** | [![PROD DEPLOY](https://github.com/casto-tech/GoQ/actions/workflows/p-prod-deploy.yml/badge.svg)](https://github.com/casto-tech/GoQ/actions/workflows/p-prod-deploy.yml) |
- | **Development Deploy** | [![DEV DEPLOY](https://github.com/casto-tech/GoQ/actions/workflows/dev-deploy.yml/badge.svg)](https://github.com/casto-tech/GoQ/actions/workflows/dev-deploy.yml) |
+ | **Production Code View & Deploy** | [![PROD DEPLOY](https://github.com/casto-tech/GoQ/actions/workflows/p-prod-deploy.yml/badge.svg)](https://github.com/casto-tech/GoQ/actions/workflows/p-prod-deploy.yml) |
+ | **Development Code View & Deploy** | [![DEV DEPLOY](https://github.com/casto-tech/GoQ/actions/workflows/dev-deploy.yml/badge.svg)](https://github.com/casto-tech/GoQ/actions/workflows/dev-deploy.yml) |
  | **Project Management** | ![Last Commit](https://img.shields.io/github/last-commit/casto-tech/GoQ.svg?logo=git) ![Commits Activity](https://img.shields.io/github/commit-activity/y/casto-tech/GoQ.svg?logo=git)<br> ![GitHub issues](https://img.shields.io/github/issues/casto-tech/GoQ?logo=git) ![GitHub repo size](https://img.shields.io/github/repo-size/casto-tech/GoQ.svg?logo=git)  |
 
 <br>
