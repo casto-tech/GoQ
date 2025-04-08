@@ -13,7 +13,7 @@ def validate_name(form, field):
 
 def validate_message(form, field):
     """Custom validator to block specific characters in the message field."""
-    blocked_chars = r"/\<>:{}_|#@;*()^"
+    blocked_chars = r"/\<>:{}_|#@;*^"
     for char in blocked_chars:
         if char in field.data:
             raise ValidationError("Message cannot contain special characters.")
